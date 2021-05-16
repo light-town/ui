@@ -8,37 +8,7 @@ module.exports = {
     index: path.resolve(__dirname, 'src', 'index.js'),
   },
   mode: 'development',
-  plugins: [
-    /*   new HtmlWebpackPlugin({
-      template: './src/popup/index.html',
-      filename: 'popup/index.html',
-      chunks: ['popup/index'],
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/background/index.html',
-      filename: 'background/index.html',
-      chunks: ['background/index'],
-    }), */
-    /*  new CopyWebpackPlugin({
-      patterns: [{ from: path.resolve(__dirname, 'src', 'manifest.json') }],
-    }), */
-    /* new CopyWebpackPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "src", "background/index.js"),
-          to: "background.js",
-        },
-      ],
-    }), */
-
-    /*  new ExtensionBuildWebpackPlugin({
-      devMode: true,
-      name: "my-first-webpack.zip",
-      directory: "src",
-      updateType: "minor",
-    }), */
-    new VueLoaderPlugin(),
-  ],
+  plugins: [new VueLoaderPlugin()],
   module: {
     rules: [
       {
