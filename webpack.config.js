@@ -9,6 +9,12 @@ module.exports = {
   },
   mode: 'development',
   plugins: [new VueLoaderPlugin()],
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.runtime.esm.js',
+    },
+    extensions: ['*', '.js', '.vue', '.json'],
+  },
   module: {
     rules: [
       {

@@ -1,7 +1,2 @@
-import UiAlert from './alert/index.vue';
-
-export { UiAlert };
-
-export default {
-  UiAlert,
-};
+export { default as UiGrid } from './grid/index.vue';
+export { default as UiAlert } from './alert/index.vue';
