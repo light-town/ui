@@ -6,7 +6,7 @@
       [`ui-grid_dir-${direction}`]: direction,
       [`ui-grid_justify-${justify}`]: justify,
       [`ui-grid_align-${alignItems}`]: alignItems,
-      [`ui-grid_wrap-${wrap}`]: wrap,
+      [`ui-grid_wrap-${wrap}`]: wrap
     }"
     @click="$emit('click', $event)"
     @contextmenu="$emit('contextmenu', $event)"
@@ -17,60 +17,60 @@
 
 <script>
 export default {
-  name: 'UiGrid',
+  name: "UiGrid",
   props: {
     justify: {
       type: String,
-      default: 'flex-start',
+      default: "flex-start",
       validator(val) {
         return [
-          'center',
-          'start',
-          'center',
-          'end',
-          'flex-start',
-          'flex-end',
-          'space-between',
-          'space-around',
+          "center",
+          "start",
+          "center",
+          "end",
+          "flex-start",
+          "flex-end",
+          "space-between",
+          "space-around"
         ].includes(val);
-      },
+      }
     },
     alignItems: {
       type: String,
-      default: 'flex-start',
+      default: "flex-start",
       validator(val) {
         return [
-          'center',
-          'start',
-          'center',
-          'end',
-          'flex-start',
-          'flex-end',
-          'space-between',
-          'space-around',
+          "center",
+          "start",
+          "center",
+          "end",
+          "flex-start",
+          "flex-end",
+          "space-between",
+          "space-around"
         ].includes(val);
-      },
+      }
     },
     wrap: {
       type: String,
-      default: 'nowrap',
+      default: "nowrap",
       validator(val) {
-        return ['nowrap', 'wrap', 'wrap-reverse'].includes(val);
-      },
+        return ["nowrap", "wrap", "wrap-reverse"].includes(val);
+      }
     },
     direction: {
       type: String,
-      default: 'row',
+      default: "row",
       validator(val) {
-        return ['row', 'column', 'row-reverse', 'column-reverse'].includes(val);
-      },
+        return ["row", "column", "row-reverse", "column-reverse"].includes(val);
+      }
     },
     component: {
       type: String,
       required: false,
-      default: 'div',
-    },
-  },
+      default: "div"
+    }
+  }
 };
 </script>
 
