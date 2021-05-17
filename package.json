@@ -1,5 +1,5 @@
 {
-  "name": "ui",
+  "name": "@light-town/ui",
   "version": "0.1.0",
   "main": "./dist/lib.common.js",
   "scripts": {
@@ -9,6 +9,16 @@
     "lint": "vue-cli-service lint",
     "format": "prettier --write \"./**/*.js\" \"./**/*.vue\""
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/light-town/ui.git"
+  },
+  "author": "MichailShcherbakov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/light-town/ui/issues"
+  },
+  "homepage": "https://github.com/light-town/ui#readme",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
