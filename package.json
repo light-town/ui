@@ -5,7 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "build:lib": "vue-cli-service build --target lib --name lib src/main.js",
+    "build:lib": "vue-cli-service build --target lib --name lib index.js",
     "lint": "vue-cli-service lint",
     "format": "prettier --write \"./**/*.js\" \"./**/*.vue\""
   },
@@ -33,7 +33,8 @@
     "node-sass": "^5.0.0",
     "prettier": "^1.19.1",
     "sass-loader": "^10.1.1",
-    "vue-template-compiler": "^2.6.11"
+    "vue-svg-loader": "^0.16.0",
+    "vue-template-compiler": "^2.6.12"
   },
   "eslintConfig": {
     "root": true,
