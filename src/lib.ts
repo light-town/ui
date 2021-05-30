@@ -20,4 +20,4 @@ export { default as UiToken } from "./components/token/index.vue";
 export { default as UiTokenSelector } from "./components/token-selector/index.vue";
 export { default as UiTreeView } from "./components/treeview/index.vue";
 export { default as UiToggle } from "./components/toggle/index.vue";
-export { default as UiThemeProvicder } from "./components/theme-provider/index.vue";
+export { default as UiThemeProvider } from "./components/theme-provider/index.vue";

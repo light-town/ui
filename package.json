@@ -1,7 +1,7 @@
 {
   "name": "@light-town/ui",
   "version": "0.1.4",
-  "main": "./dist/lib.common.js",
+  "main": "./src/lib.ts",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
