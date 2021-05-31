@@ -1,0 +1,80 @@
+$ui-alert-info-bg: $blue-10;
+$ui-alert-info-text: $blue-100;
+$ui-alert-info-icon-fill: $blue-100;
+
+$ui-alert-success-bg: $green-50;
+$ui-alert-success-text: $green-700;
+$ui-alert-success-icon-fill: $green-700;
+
+$ui-alert-warning-bg: $orange-50;
+$ui-alert-warning-text: $orange-500;
+$ui-alert-warning-icon-fill: $orange-500;
+
+$ui-alert-error-bg: $red-50;
+$ui-alert-error-text: $red-100;
+$ui-alert-error-icon-fill: $red-100;
+
+.ui-alert {
+  @include ui-px-6;
+  @include ui-py-2\.5;
+
+  border: 0;
+  border-radius: 0.25rem;
+
+  &__icon {
+    @include ui-size(1.25rem);
+    @include ui-mr-6;
+  }
+
+  &__text {
+    font-size: px-to-rem(14px);
+  }
+
+  &_info {
+    background-color: $ui-alert-info-bg;
+
+    .ui-alert__icon {
+      fill: $ui-alert-info-icon-fill;
+    }
+
+    .ui-alert__text {
+      color: $ui-alert-info-text;
+    }
+  }
+
+  &_success {
+    background-color: $ui-alert-success-bg;
+
+    .ui-alert__icon {
+      fill: $ui-alert-success-icon-fill;
+    }
+
+    .ui-alert__text {
+      color: $ui-alert-success-text;
+    }
+  }
+
+  &_warning {
+    background-color: $ui-alert-warning-bg;
+
+    .ui-alert__icon {
+      fill: $ui-alert-warning-icon-fill;
+    }
+
+    .ui-alert__text {
+      color: $ui-alert-warning-text;
+    }
+  }
+
+  &_error {
+    background-color: $ui-alert-error-bg;
+
+    .ui-alert__icon {
+      fill: $ui-alert-error-icon-fill;
+    }
+
+    .ui-alert__text {
+      color: $ui-alert-error-text;
+    }
+  }
+}

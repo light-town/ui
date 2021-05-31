@@ -1,4 +1,6 @@
-export { default as UiAlert } from "./components/alert/index.vue";
+import "./scss/index.scss";
+
+export { default as UiAlert } from "./components/alert/alert.vue";
 export { default as UiAvatar } from "./components/avatar/index.vue";
 export { default as UiBadge } from "./components/badge/index.vue";
 export { default as UiBreadcrumbs } from "./components/breadcrumbs/index.vue";
@@ -16,8 +18,8 @@ export { default as UiPortal } from "./components/portal/index.vue";
 export { default as UiSelect } from "./components/select/index.vue";
 export { default as UiSkeleton } from "./components/skeleton/index.vue";
 export { default as UiTable } from "./components/table/index.vue";
+export { default as UiThemeProvider } from "./components/theme-provider/theme-provider.vue";
+export { default as UiToggle } from "./components/toggle/index.vue";
 export { default as UiToken } from "./components/token/index.vue";
 export { default as UiTokenSelector } from "./components/token-selector/index.vue";
 export { default as UiTreeView } from "./components/treeview/index.vue";
-export { default as UiToggle } from "./components/toggle/index.vue";
-export { default as UiThemeProvider } from "./components/theme-provider/index.vue";

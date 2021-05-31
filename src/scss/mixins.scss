@@ -1,0 +1,13 @@
+@mixin ui-truncate($max-width: 100%) {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  vertical-align: top;
+  white-space: nowrap;
+  max-width: $max-width;
+}
+
+@mixin ui-size($size: 16px) {
+  width: $size;
+  height: $size;
+}

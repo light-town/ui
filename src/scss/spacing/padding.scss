@@ -1,0 +1,1144 @@
+@import "scale";
+
+@mixin ui-p($rem: 0) {
+  padding: $rem;
+}
+
+@mixin -ui-p($rem: 0) {
+  padding: -$rem;
+}
+
+@mixin ui-px($rem: 0) {
+  padding-left: $rem;
+  padding-right: $rem;
+}
+
+@mixin -ui-px($rem: 0) {
+  padding-left: -$rem;
+  padding-right: -$rem;
+}
+
+@mixin ui-py($rem: 0) {
+  padding-top: $rem;
+  padding-bottom: $rem;
+}
+
+@mixin -ui-py($rem: 0) {
+  padding-top: -$rem;
+  padding-bottom: -$rem;
+}
+
+@each $padding, $value in $spacing {
+  .ui-p-#{$padding} {
+    @include ui-p($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-p-#{$padding} {
+    @include -ui-p($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .ui-px-#{$padding} {
+    @include ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-px-#{$padding} {
+    @include -ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .ui-py-#{$padding} {
+    @include ui-py($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-py-#{$padding} {
+    @include -ui-py($value);
+  }
+}
+
+/// PADDING POS
+
+@mixin ui-p-auto {
+  @include ui-p(auto);
+}
+
+@mixin ui-p-0 {
+  @include ui-p($spacing-scale-0);
+}
+
+@mixin ui-p-0\.5 {
+  @include ui-p($spacing-scale-1);
+}
+
+@mixin ui-p-1 {
+  @include ui-p($spacing-scale-2);
+}
+
+@mixin ui-p-1\.5 {
+  @include ui-p($spacing-scale-3);
+}
+
+@mixin ui-p-2 {
+  @include ui-p($spacing-scale-4);
+}
+
+@mixin ui-p-2\.5 {
+  @include ui-p($spacing-scale-5);
+}
+
+@mixin ui-p-3 {
+  @include ui-p($spacing-scale-6);
+}
+
+@mixin ui-p-3\.5 {
+  @include ui-p($spacing-scale-7);
+}
+
+@mixin ui-p-4 {
+  @include ui-p($spacing-scale-8);
+}
+
+@mixin ui-p-5 {
+  @include ui-p($spacing-scale-9);
+}
+
+@mixin ui-p-6 {
+  @include ui-p($spacing-scale-10);
+}
+
+@mixin ui-p-7 {
+  @include ui-p($spacing-scale-11);
+}
+
+@mixin ui-p-8 {
+  @include ui-p($spacing-scale-12);
+}
+
+/// PADDING NEG
+
+@mixin -ui-p-0\.5 {
+  @include -ui-p($spacing-scale-1);
+}
+
+@mixin -ui-p-1 {
+  @include -ui-p($spacing-scale-2);
+}
+
+@mixin -ui-p-1\.5 {
+  @include -ui-p($spacing-scale-3);
+}
+
+@mixin -ui-p-2 {
+  @include -ui-p($spacing-scale-4);
+}
+
+@mixin -ui-p-2\.5 {
+  @include -ui-p($spacing-scale-5);
+}
+
+@mixin -ui-p-3 {
+  @include -ui-p($spacing-scale-6);
+}
+
+@mixin -ui-p-3\.5 {
+  @include -ui-p($spacing-scale-7);
+}
+
+@mixin -ui-p-4 {
+  @include -ui-p($spacing-scale-8);
+}
+
+@mixin -ui-p-5 {
+  @include -ui-p($spacing-scale-9);
+}
+
+@mixin -ui-p-6 {
+  @include -ui-p($spacing-scale-10);
+}
+
+@mixin -ui-p-7 {
+  @include -ui-p($spacing-scale-11);
+}
+
+@mixin -ui-p-8 {
+  @include -ui-p($spacing-scale-12);
+}
+
+/// PADDING POS X
+
+@mixin ui-px-auto {
+  @include ui-px(auto);
+}
+
+@mixin ui-px-0 {
+  @include ui-px($spacing-scale-0);
+}
+
+@mixin ui-px-0\.5 {
+  @include ui-px($spacing-scale-1);
+}
+
+@mixin ui-px-1 {
+  @include ui-px($spacing-scale-2);
+}
+
+@mixin ui-px-1\.5 {
+  @include ui-px($spacing-scale-3);
+}
+
+@mixin ui-px-2 {
+  @include ui-px($spacing-scale-4);
+}
+
+@mixin ui-px-2\.5 {
+  @include ui-px($spacing-scale-5);
+}
+
+@mixin ui-px-3 {
+  @include ui-px($spacing-scale-6);
+}
+
+@mixin ui-px-3\.5 {
+  @include ui-px($spacing-scale-7);
+}
+
+@mixin ui-px-4 {
+  @include ui-px($spacing-scale-8);
+}
+
+@mixin ui-px-5 {
+  @include ui-px($spacing-scale-9);
+}
+
+@mixin ui-px-6 {
+  @include ui-px($spacing-scale-10);
+}
+
+@mixin ui-px-7 {
+  @include ui-px($spacing-scale-11);
+}
+
+@mixin ui-px-8 {
+  @include ui-px($spacing-scale-12);
+}
+
+/// PADDING NEG X
+
+@mixin -ui-px-0\.5 {
+  @include -ui-px($spacing-scale-1);
+}
+
+@mixin -ui-px-1 {
+  @include -ui-px($spacing-scale-2);
+}
+
+@mixin -ui-px-1\.5 {
+  @include -ui-px($spacing-scale-3);
+}
+
+@mixin -ui-px-2 {
+  @include -ui-px($spacing-scale-4);
+}
+
+@mixin -ui-px-2\.5 {
+  @include -ui-px($spacing-scale-5);
+}
+
+@mixin -ui-px-3 {
+  @include -ui-px($spacing-scale-6);
+}
+
+@mixin -ui-px-3\.5 {
+  @include -ui-px($spacing-scale-7);
+}
+
+@mixin -ui-px-4 {
+  @include -ui-px($spacing-scale-8);
+}
+
+@mixin -ui-px-5 {
+  @include -ui-px($spacing-scale-9);
+}
+
+@mixin -ui-px-6 {
+  @include -ui-px($spacing-scale-10);
+}
+
+@mixin -ui-px-7 {
+  @include -ui-px($spacing-scale-11);
+}
+
+@mixin -ui-px-8 {
+  @include -ui-px($spacing-scale-12);
+}
+
+/// PADDING POS Y
+
+@mixin ui-py-auto {
+  @include ui-py(auto);
+}
+
+@mixin ui-py-0 {
+  @include ui-py($spacing-scale-0);
+}
+
+@mixin ui-py-0\.5 {
+  @include ui-py($spacing-scale-1);
+}
+
+@mixin ui-py-1 {
+  @include ui-py($spacing-scale-2);
+}
+
+@mixin ui-py-1\.5 {
+  @include ui-py($spacing-scale-3);
+}
+
+@mixin ui-py-2 {
+  @include ui-py($spacing-scale-4);
+}
+
+@mixin ui-py-2\.5 {
+  @include ui-py($spacing-scale-5);
+}
+
+@mixin ui-py-3 {
+  @include ui-py($spacing-scale-6);
+}
+
+@mixin ui-py-3\.5 {
+  @include ui-py($spacing-scale-7);
+}
+
+@mixin ui-py-4 {
+  @include ui-py($spacing-scale-8);
+}
+
+@mixin ui-py-5 {
+  @include ui-py($spacing-scale-9);
+}
+
+@mixin ui-py-6 {
+  @include ui-py($spacing-scale-10);
+}
+
+@mixin ui-py-7 {
+  @include ui-py($spacing-scale-11);
+}
+
+@mixin ui-py-8 {
+  @include ui-py($spacing-scale-12);
+}
+
+/// PADDING NEG Y
+
+@mixin -ui-py-0\.5 {
+  @include -ui-py($spacing-scale-1);
+}
+
+@mixin -ui-py-1 {
+  @include -ui-py($spacing-scale-2);
+}
+
+@mixin -ui-py-1\.5 {
+  @include -ui-py($spacing-scale-3);
+}
+
+@mixin -ui-py-2 {
+  @include -ui-py($spacing-scale-4);
+}
+
+@mixin -ui-py-2\.5 {
+  @include -ui-py($spacing-scale-5);
+}
+
+@mixin -ui-py-3 {
+  @include -ui-py($spacing-scale-6);
+}
+
+@mixin -ui-py-3\.5 {
+  @include -ui-py($spacing-scale-7);
+}
+
+@mixin -ui-py-4 {
+  @include -ui-py($spacing-scale-8);
+}
+
+@mixin -ui-py-5 {
+  @include -ui-py($spacing-scale-9);
+}
+
+@mixin -ui-py-6 {
+  @include -ui-py($spacing-scale-10);
+}
+
+@mixin -ui-py-7 {
+  @include -ui-py($spacing-scale-11);
+}
+
+@mixin -ui-py-8 {
+  @include -ui-py($spacing-scale-12);
+}
+
+/// PADDING POS TOP
+
+@mixin ui-xt-auto {
+  @include ui-xt(auto);
+}
+
+@mixin ui-xt-0 {
+  @include ui-xt($spacing-scale-0);
+}
+
+@mixin ui-xt-0\.5 {
+  @include ui-xt($spacing-scale-1);
+}
+
+@mixin ui-xt-1 {
+  @include ui-xt($spacing-scale-2);
+}
+
+@mixin ui-xt-1\.5 {
+  @include ui-xt($spacing-scale-3);
+}
+
+@mixin ui-xt-2 {
+  @include ui-xt($spacing-scale-4);
+}
+
+@mixin ui-xt-2\.5 {
+  @include ui-xt($spacing-scale-5);
+}
+
+@mixin ui-xt-3 {
+  @include ui-xt($spacing-scale-6);
+}
+
+@mixin ui-xt-3\.5 {
+  @include ui-xt($spacing-scale-7);
+}
+
+@mixin ui-xt-4 {
+  @include ui-xt($spacing-scale-8);
+}
+
+@mixin ui-xt-5 {
+  @include ui-xt($spacing-scale-9);
+}
+
+@mixin ui-xt-6 {
+  @include ui-xt($spacing-scale-10);
+}
+
+@mixin ui-xt-7 {
+  @include ui-xt($spacing-scale-11);
+}
+
+@mixin ui-xt-8 {
+  @include ui-xt($spacing-scale-12);
+}
+
+/// PADDING NEG TOP
+
+@mixin -ui-xt-0\.5 {
+  @include -ui-xt($spacing-scale-1);
+}
+
+@mixin -ui-xt-1 {
+  @include -ui-xt($spacing-scale-2);
+}
+
+@mixin -ui-xt-1\.5 {
+  @include -ui-xt($spacing-scale-3);
+}
+
+@mixin -ui-xt-2 {
+  @include -ui-xt($spacing-scale-4);
+}
+
+@mixin -ui-xt-2\.5 {
+  @include -ui-xt($spacing-scale-5);
+}
+
+@mixin -ui-xt-3 {
+  @include -ui-xt($spacing-scale-6);
+}
+
+@mixin -ui-xt-3\.5 {
+  @include -ui-xt($spacing-scale-7);
+}
+
+@mixin -ui-xt-4 {
+  @include -ui-xt($spacing-scale-8);
+}
+
+@mixin -ui-xt-5 {
+  @include -ui-xt($spacing-scale-9);
+}
+
+@mixin -ui-xt-6 {
+  @include -ui-xt($spacing-scale-10);
+}
+
+@mixin -ui-xt-7 {
+  @include -ui-xt($spacing-scale-11);
+}
+
+@mixin -ui-xt-8 {
+  @include -ui-xt($spacing-scale-12);
+}
+/// PADDING POS X
+
+@mixin ui-xx-auto {
+  @include ui-xx(auto);
+}
+
+@mixin ui-xx-0 {
+  @include ui-xx($spacing-scale-0);
+}
+
+@mixin ui-xx-0\.5 {
+  @include ui-xx($spacing-scale-1);
+}
+
+@mixin ui-xx-1 {
+  @include ui-xx($spacing-scale-2);
+}
+
+@mixin ui-xx-1\.5 {
+  @include ui-xx($spacing-scale-3);
+}
+
+@mixin ui-xx-2 {
+  @include ui-xx($spacing-scale-4);
+}
+
+@mixin ui-xx-2\.5 {
+  @include ui-xx($spacing-scale-5);
+}
+
+@mixin ui-xx-3 {
+  @include ui-xx($spacing-scale-6);
+}
+
+@mixin ui-xx-3\.5 {
+  @include ui-xx($spacing-scale-7);
+}
+
+@mixin ui-xx-4 {
+  @include ui-xx($spacing-scale-8);
+}
+
+@mixin ui-xx-5 {
+  @include ui-xx($spacing-scale-9);
+}
+
+@mixin ui-xx-6 {
+  @include ui-xx($spacing-scale-10);
+}
+
+@mixin ui-xx-7 {
+  @include ui-xx($spacing-scale-11);
+}
+
+@mixin ui-xx-8 {
+  @include ui-xx($spacing-scale-12);
+}
+
+/// PADDING NEG X
+
+@mixin -ui-xx-0\.5 {
+  @include -ui-xx($spacing-scale-1);
+}
+
+@mixin -ui-xx-1 {
+  @include -ui-xx($spacing-scale-2);
+}
+
+@mixin -ui-xx-1\.5 {
+  @include -ui-xx($spacing-scale-3);
+}
+
+@mixin -ui-xx-2 {
+  @include -ui-xx($spacing-scale-4);
+}
+
+@mixin -ui-xx-2\.5 {
+  @include -ui-xx($spacing-scale-5);
+}
+
+@mixin -ui-xx-3 {
+  @include -ui-xx($spacing-scale-6);
+}
+
+@mixin -ui-xx-3\.5 {
+  @include -ui-xx($spacing-scale-7);
+}
+
+@mixin -ui-xx-4 {
+  @include -ui-xx($spacing-scale-8);
+}
+
+@mixin -ui-xx-5 {
+  @include -ui-xx($spacing-scale-9);
+}
+
+@mixin -ui-xx-6 {
+  @include -ui-xx($spacing-scale-10);
+}
+
+@mixin -ui-xx-7 {
+  @include -ui-xx($spacing-scale-11);
+}
+
+@mixin -ui-xx-8 {
+  @include -ui-xx($spacing-scale-12);
+}
+
+/// PADDING POS BOTTOM
+
+@mixin ui-xb-auto {
+  @include ui-xb(auto);
+}
+
+@mixin ui-xb-0 {
+  @include ui-xb($spacing-scale-0);
+}
+
+@mixin ui-xb-0\.5 {
+  @include ui-xb($spacing-scale-1);
+}
+
+@mixin ui-xb-1 {
+  @include ui-xb($spacing-scale-2);
+}
+
+@mixin ui-xb-1\.5 {
+  @include ui-xb($spacing-scale-3);
+}
+
+@mixin ui-xb-2 {
+  @include ui-xb($spacing-scale-4);
+}
+
+@mixin ui-xb-2\.5 {
+  @include ui-xb($spacing-scale-5);
+}
+
+@mixin ui-xb-3 {
+  @include ui-xb($spacing-scale-6);
+}
+
+@mixin ui-xb-3\.5 {
+  @include ui-xb($spacing-scale-7);
+}
+
+@mixin ui-xb-4 {
+  @include ui-xb($spacing-scale-8);
+}
+
+@mixin ui-xb-5 {
+  @include ui-xb($spacing-scale-9);
+}
+
+@mixin ui-xb-6 {
+  @include ui-xb($spacing-scale-10);
+}
+
+@mixin ui-xb-7 {
+  @include ui-xb($spacing-scale-11);
+}
+
+@mixin ui-xb-8 {
+  @include ui-xb($spacing-scale-12);
+}
+
+/// PADDING NEG BOTTOM
+
+@mixin -ui-xb-0\.5 {
+  @include -ui-xb($spacing-scale-1);
+}
+
+@mixin -ui-xb-1 {
+  @include -ui-xb($spacing-scale-2);
+}
+
+@mixin -ui-xb-1\.5 {
+  @include -ui-xb($spacing-scale-3);
+}
+
+@mixin -ui-xb-2 {
+  @include -ui-xb($spacing-scale-4);
+}
+
+@mixin -ui-xb-2\.5 {
+  @include -ui-xb($spacing-scale-5);
+}
+
+@mixin -ui-xb-3 {
+  @include -ui-xb($spacing-scale-6);
+}
+
+@mixin -ui-xb-3\.5 {
+  @include -ui-xb($spacing-scale-7);
+}
+
+@mixin -ui-xb-4 {
+  @include -ui-xb($spacing-scale-8);
+}
+
+@mixin -ui-xb-5 {
+  @include -ui-xb($spacing-scale-9);
+}
+
+@mixin -ui-xb-6 {
+  @include -ui-xb($spacing-scale-10);
+}
+
+@mixin -ui-xb-7 {
+  @include -ui-xb($spacing-scale-11);
+}
+
+@mixin -ui-xb-8 {
+  @include -ui-xb($spacing-scale-12);
+}
+
+/// PADDING POS X
+
+@mixin ui-xx-auto {
+  @include ui-xx(auto);
+}
+
+@mixin ui-xx-0 {
+  @include ui-xx($spacing-scale-0);
+}
+
+@mixin ui-xx-0\.5 {
+  @include ui-xx($spacing-scale-1);
+}
+
+@mixin ui-xx-1 {
+  @include ui-xx($spacing-scale-2);
+}
+
+@mixin ui-xx-1\.5 {
+  @include ui-xx($spacing-scale-3);
+}
+
+@mixin ui-xx-2 {
+  @include ui-xx($spacing-scale-4);
+}
+
+@mixin ui-xx-2\.5 {
+  @include ui-xx($spacing-scale-5);
+}
+
+@mixin ui-xx-3 {
+  @include ui-xx($spacing-scale-6);
+}
+
+@mixin ui-xx-3\.5 {
+  @include ui-xx($spacing-scale-7);
+}
+
+@mixin ui-xx-4 {
+  @include ui-xx($spacing-scale-8);
+}
+
+@mixin ui-xx-5 {
+  @include ui-xx($spacing-scale-9);
+}
+
+@mixin ui-xx-6 {
+  @include ui-xx($spacing-scale-10);
+}
+
+@mixin ui-xx-7 {
+  @include ui-xx($spacing-scale-11);
+}
+
+@mixin ui-xx-8 {
+  @include ui-xx($spacing-scale-12);
+}
+
+/// PADDING NEG X
+
+@mixin -ui-xx-0\.5 {
+  @include -ui-xx($spacing-scale-1);
+}
+
+@mixin -ui-xx-1 {
+  @include -ui-xx($spacing-scale-2);
+}
+
+@mixin -ui-xx-1\.5 {
+  @include -ui-xx($spacing-scale-3);
+}
+
+@mixin -ui-xx-2 {
+  @include -ui-xx($spacing-scale-4);
+}
+
+@mixin -ui-xx-2\.5 {
+  @include -ui-xx($spacing-scale-5);
+}
+
+@mixin -ui-xx-3 {
+  @include -ui-xx($spacing-scale-6);
+}
+
+@mixin -ui-xx-3\.5 {
+  @include -ui-xx($spacing-scale-7);
+}
+
+@mixin -ui-xx-4 {
+  @include -ui-xx($spacing-scale-8);
+}
+
+@mixin -ui-xx-5 {
+  @include -ui-xx($spacing-scale-9);
+}
+
+@mixin -ui-xx-6 {
+  @include -ui-xx($spacing-scale-10);
+}
+
+@mixin -ui-xx-7 {
+  @include -ui-xx($spacing-scale-11);
+}
+
+@mixin -ui-xx-8 {
+  @include -ui-xx($spacing-scale-12);
+}
+
+/// PADDING POS LEFT
+
+@mixin ui-xl-auto {
+  @include ui-xl(auto);
+}
+
+@mixin ui-xl-0 {
+  @include ui-xl($spacing-scale-0);
+}
+
+@mixin ui-xl-0\.5 {
+  @include ui-xl($spacing-scale-1);
+}
+
+@mixin ui-xl-1 {
+  @include ui-xl($spacing-scale-2);
+}
+
+@mixin ui-xl-1\.5 {
+  @include ui-xl($spacing-scale-3);
+}
+
+@mixin ui-xl-2 {
+  @include ui-xl($spacing-scale-4);
+}
+
+@mixin ui-xl-2\.5 {
+  @include ui-xl($spacing-scale-5);
+}
+
+@mixin ui-xl-3 {
+  @include ui-xl($spacing-scale-6);
+}
+
+@mixin ui-xl-3\.5 {
+  @include ui-xl($spacing-scale-7);
+}
+
+@mixin ui-xl-4 {
+  @include ui-xl($spacing-scale-8);
+}
+
+@mixin ui-xl-5 {
+  @include ui-xl($spacing-scale-9);
+}
+
+@mixin ui-xl-6 {
+  @include ui-xl($spacing-scale-10);
+}
+
+@mixin ui-xl-7 {
+  @include ui-xl($spacing-scale-11);
+}
+
+@mixin ui-xl-8 {
+  @include ui-xl($spacing-scale-12);
+}
+
+/// PADDING NEG LEFT
+
+@mixin -ui-xl-0\.5 {
+  @include -ui-xl($spacing-scale-1);
+}
+
+@mixin -ui-xl-1 {
+  @include -ui-xl($spacing-scale-2);
+}
+
+@mixin -ui-xl-1\.5 {
+  @include -ui-xl($spacing-scale-3);
+}
+
+@mixin -ui-xl-2 {
+  @include -ui-xl($spacing-scale-4);
+}
+
+@mixin -ui-xl-2\.5 {
+  @include -ui-xl($spacing-scale-5);
+}
+
+@mixin -ui-xl-3 {
+  @include -ui-xl($spacing-scale-6);
+}
+
+@mixin -ui-xl-3\.5 {
+  @include -ui-xl($spacing-scale-7);
+}
+
+@mixin -ui-xl-4 {
+  @include -ui-xl($spacing-scale-8);
+}
+
+@mixin -ui-xl-5 {
+  @include -ui-xl($spacing-scale-9);
+}
+
+@mixin -ui-xl-6 {
+  @include -ui-xl($spacing-scale-10);
+}
+
+@mixin -ui-xl-7 {
+  @include -ui-xl($spacing-scale-11);
+}
+
+@mixin -ui-xl-8 {
+  @include -ui-xl($spacing-scale-12);
+}
+
+/// PADDING POS X
+
+@mixin ui-xx-auto {
+  @include ui-xx(auto);
+}
+
+@mixin ui-xx-0 {
+  @include ui-xx($spacing-scale-0);
+}
+
+@mixin ui-xx-0\.5 {
+  @include ui-xx($spacing-scale-1);
+}
+
+@mixin ui-xx-1 {
+  @include ui-xx($spacing-scale-2);
+}
+
+@mixin ui-xx-1\.5 {
+  @include ui-xx($spacing-scale-3);
+}
+
+@mixin ui-xx-2 {
+  @include ui-xx($spacing-scale-4);
+}
+
+@mixin ui-xx-2\.5 {
+  @include ui-xx($spacing-scale-5);
+}
+
+@mixin ui-xx-3 {
+  @include ui-xx($spacing-scale-6);
+}
+
+@mixin ui-xx-3\.5 {
+  @include ui-xx($spacing-scale-7);
+}
+
+@mixin ui-xx-4 {
+  @include ui-xx($spacing-scale-8);
+}
+
+@mixin ui-xx-5 {
+  @include ui-xx($spacing-scale-9);
+}
+
+@mixin ui-xx-6 {
+  @include ui-xx($spacing-scale-10);
+}
+
+@mixin ui-xx-7 {
+  @include ui-xx($spacing-scale-11);
+}
+
+@mixin ui-xx-8 {
+  @include ui-xx($spacing-scale-12);
+}
+
+/// PADDING NEG X
+
+@mixin -ui-xx-0\.5 {
+  @include -ui-xx($spacing-scale-1);
+}
+
+@mixin -ui-xx-1 {
+  @include -ui-xx($spacing-scale-2);
+}
+
+@mixin -ui-xx-1\.5 {
+  @include -ui-xx($spacing-scale-3);
+}
+
+@mixin -ui-xx-2 {
+  @include -ui-xx($spacing-scale-4);
+}
+
+@mixin -ui-xx-2\.5 {
+  @include -ui-xx($spacing-scale-5);
+}
+
+@mixin -ui-xx-3 {
+  @include -ui-xx($spacing-scale-6);
+}
+
+@mixin -ui-xx-3\.5 {
+  @include -ui-xx($spacing-scale-7);
+}
+
+@mixin -ui-xx-4 {
+  @include -ui-xx($spacing-scale-8);
+}
+
+@mixin -ui-xx-5 {
+  @include -ui-xx($spacing-scale-9);
+}
+
+@mixin -ui-xx-6 {
+  @include -ui-xx($spacing-scale-10);
+}
+
+@mixin -ui-xx-7 {
+  @include -ui-xx($spacing-scale-11);
+}
+
+@mixin -ui-xx-8 {
+  @include -ui-xx($spacing-scale-12);
+}
+
+/// PADDING POS RIGHT
+
+@mixin ui-xr-auto {
+  @include ui-xr(auto);
+}
+
+@mixin ui-xr-0 {
+  @include ui-xr($spacing-scale-0);
+}
+
+@mixin ui-xr-0\.5 {
+  @include ui-xr($spacing-scale-1);
+}
+
+@mixin ui-xr-1 {
+  @include ui-xr($spacing-scale-2);
+}
+
+@mixin ui-xr-1\.5 {
+  @include ui-xr($spacing-scale-3);
+}
+
+@mixin ui-xr-2 {
+  @include ui-xr($spacing-scale-4);
+}
+
+@mixin ui-xr-2\.5 {
+  @include ui-xr($spacing-scale-5);
+}
+
+@mixin ui-xr-3 {
+  @include ui-xr($spacing-scale-6);
+}
+
+@mixin ui-xr-3\.5 {
+  @include ui-xr($spacing-scale-7);
+}
+
+@mixin ui-xr-4 {
+  @include ui-xr($spacing-scale-8);
+}
+
+@mixin ui-xr-5 {
+  @include ui-xr($spacing-scale-9);
+}
+
+@mixin ui-xr-6 {
+  @include ui-xr($spacing-scale-10);
+}
+
+@mixin ui-xr-7 {
+  @include ui-xr($spacing-scale-11);
+}
+
+@mixin ui-xr-8 {
+  @include ui-xr($spacing-scale-12);
+}
+
+/// PADDING NEG RIGHT
+
+@mixin -ui-xr-0\.5 {
+  @include -ui-xr($spacing-scale-1);
+}
+
+@mixin -ui-xr-1 {
+  @include -ui-xr($spacing-scale-2);
+}
+
+@mixin -ui-xr-1\.5 {
+  @include -ui-xr($spacing-scale-3);
+}
+
+@mixin -ui-xr-2 {
+  @include -ui-xr($spacing-scale-4);
+}
+
+@mixin -ui-xr-2\.5 {
+  @include -ui-xr($spacing-scale-5);
+}
+
+@mixin -ui-xr-3 {
+  @include -ui-xr($spacing-scale-6);
+}
+
+@mixin -ui-xr-3\.5 {
+  @include -ui-xr($spacing-scale-7);
+}
+
+@mixin -ui-xr-4 {
+  @include -ui-xr($spacing-scale-8);
+}
+
+@mixin -ui-xr-5 {
+  @include -ui-xr($spacing-scale-9);
+}
+
+@mixin -ui-xr-6 {
+  @include -ui-xr($spacing-scale-10);
+}
+
+@mixin -ui-xr-7 {
+  @include -ui-xr($spacing-scale-11);
+}
+
+@mixin -ui-xr-8 {
+  @include -ui-xr($spacing-scale-12);
+}

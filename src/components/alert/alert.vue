@@ -1,5 +1,5 @@
 <template>
-  <ui-grid align-items="center" :class="['ui-alert', `ui-alert--${severity}`]">
+  <ui-grid align-items="center" :class="['ui-alert', `ui-alert_${severity}`]">
     <error-icon v-if="severity === 'error'" class="ui-alert__icon"></error-icon>
     <warning-icon
       v-if="severity === 'warning'"
@@ -10,7 +10,9 @@
       class="ui-alert__icon"
     ></check-icon>
     <info-icon v-if="severity === 'info'" class="ui-alert__icon"></info-icon>
-    <p class="ui-alert__text"><slot></slot></p>
+    <p class="ui-alert__text">
+      {{ message }}
+    </p>
   </ui-grid>
 </template>
 
@@ -32,6 +34,11 @@ export default Vue.extend({
     InfoIcon
   },
   props: {
+    message: {
+      type: String,
+      required: false,
+      default: ""
+    },
     severity: {
       type: String,
       required: true,
@@ -42,5 +49,3 @@ export default Vue.extend({
   }
 });
 </script>
-
-<style lang="scss" src="./index.scss"></style>

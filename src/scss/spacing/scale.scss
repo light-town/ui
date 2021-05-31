@@ -1,0 +1,29 @@
+$spacing-scale-0: 0;
+$spacing-scale-1: 0.125rem;
+$spacing-scale-2: 0.325rem;
+$spacing-scale-3: 0.25rem;
+$spacing-scale-4: 0.5rem;
+$spacing-scale-5: 0.625rem;
+$spacing-scale-6: 0.75rem;
+$spacing-scale-7: 0.875rem;
+$spacing-scale-8: 1rem;
+$spacing-scale-9: 1.25rem;
+$spacing-scale-10: 1.5rem;
+$spacing-scale-11: 1.75rem;
+$spacing-scale-12: 2rem;
+
+$spacing: (
+  "0": $spacing-scale-0,
+  "0\\.5": $spacing-scale-1,
+  "1": $spacing-scale-2,
+  "1\\.5": $spacing-scale-3,
+  "2": $spacing-scale-4,
+  "2\\.5": $spacing-scale-5,
+  "3": $spacing-scale-6,
+  "3\\.5": $spacing-scale-7,
+  "4": $spacing-scale-8,
+  "5": $spacing-scale-9,
+  "6": $spacing-scale-10,
+  "7": $spacing-scale-11,
+  "8": $spacing-scale-12
+);

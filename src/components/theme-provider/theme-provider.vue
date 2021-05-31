@@ -1,6 +1,6 @@
 <template>
-  <ui-grid :id="APP_THEME_ID" :data-theme-mode="mode">
-    <ui-grid :id="APP_CONTENT_LAYOUT_ID" class="app-page__layout">
+  <ui-grid :class="`ui-theme_${mode}`">
+    <ui-grid :id="APP_CONTENT_LAYOUT_ID">
       <slot></slot>
     </ui-grid>
     <portal-target name="modals-location" multiple> </portal-target>
@@ -9,8 +9,11 @@
 
 <script lang="ts">
 import Vue from "vue";
+import PortalVue from "portal-vue";
 import UiGrid from "../grid/index.vue";
 import * as config from "../../config";
+
+Vue.use(PortalVue);
 
 export default Vue.extend({
   name: "ThemeProvider",
@@ -35,4 +38,4 @@ export default Vue.extend({
 });
 </script>
 
-<style lang="scss" src="./index.scss"></style>
+<style lang="scss" src="./theme-provider.scss"></style>
