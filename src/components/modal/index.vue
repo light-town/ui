@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import UiGrid from "../grid/index.vue";
+import UiGrid from "../grid/grid.vue";
 import UiButton from "../button/index.vue";
 
 export default {

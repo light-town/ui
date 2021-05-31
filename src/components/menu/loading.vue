@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import UiGrid from "../grid/index.vue";
+import UiGrid from "../grid/grid.vue";
 import UiLoading from "../loading/index.vue";
 
 export default {

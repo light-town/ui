@@ -31,14 +31,14 @@ const Template: Story = (args, { argTypes }) => ({
 export const Default: AbstractTemplate = Template.bind({});
 Default.args = {
   message: "The some message",
-  severity: "info"
+  variant: "info"
 };
 
 export default {
   component: UiAlert,
   title: "Components/Alert",
   argTypes: {
-    severity: {
+    variant: {
       control: {
         type: "select",
         options: ["info", "warning", "success", "error"]

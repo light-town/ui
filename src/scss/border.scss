@@ -1,0 +1,31 @@
+@mixin ui-rounded-none {
+  border-radius: none;
+}
+
+.ui-rounded-none {
+  @include ui-rounded-none;
+}
+
+@mixin ui-rounded-1 {
+  border-radius: 0.25rem;
+}
+
+.ui-rounded-1 {
+  @include ui-rounded-1;
+}
+
+@mixin ui-rounded-2 {
+  border-radius: 0.375rem;
+}
+
+.ui-rounded-2 {
+  @include ui-rounded-2;
+}
+
+@mixin ui-rounded-3 {
+  border-radius: 0.5rem;
+}
+
+.ui-rounded-3 {
+  @include ui-rounded-3;
+}

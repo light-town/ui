@@ -1,98 +1,93 @@
-#theme[data-theme-mode="light"] {
-  --color-ui-avatar-badge-border: var(--color-gray-150);
-  --color-ui-avatar-badge-bg: var(--color-gray-100);
-  --color-ui-avatar-badge-text: var(--color-gray-450);
-}
+$ui-avatar-badge-border: $gray-150;
+$ui-avatar-badge-bg: $gray-100;
+$ui-avatar-badge-text: $gray-450;
 
 .ui-avatar {
-  align-items: center;
-  justify-content: center;
+  @include ui-flex-fixed;
 
-  flex-shrink: 0;
-  flex-grow: 0;
+  border: 1px solid $ui-avatar-badge-border;
 
-  border: 1px solid var(--color-ui-avatar-badge-border);
-
-  background-color: var(--color-ui-avatar-badge-bg);
+  background-color: $ui-avatar-badge-bg;
 
   &__img {
-    width: 100%;
-    height: 100%;
+    @include ui-flex;
+    @include ui-flex-fixed;
+    @include ui-size(100%);
   }
 
   &__badge {
     font-weight: 500;
 
-    color: var(--color-ui-avatar-badge-text);
+    color: $ui-avatar-badge-text;
   }
 
   &-s16 {
-    width: 1rem;
-    height: 1rem;
+    @include ui-size(1rem);
+
     font-size: 0.75rem;
     line-height: 1rem;
     border-radius: 0.125rem;
   }
 
   &-s24 {
-    width: 1.5rem;
-    height: 1.5rem;
+    @include ui-size(1.5rem);
+
     font-size: 0.75rem;
     line-height: 1rem;
     border-radius: 0.25rem;
   }
 
   &-s32 {
-    width: 2rem;
-    height: 2rem;
+    @include ui-size(2rem);
+
     font-size: 0.875rem;
     line-height: 1rem;
     border-radius: 0.25rem;
   }
 
   &-s44 {
-    width: 2.75rem;
-    height: 2.75rem;
+    @include ui-size(2.75rem);
+
     font-size: 1.125rem;
     line-height: 1.5rem;
     border-radius: 0.25rem;
   }
 
   &-s48 {
-    width: 3rem;
-    height: 3rem;
+    @include ui-size(3rem);
+
     font-size: 1.1875rem;
     line-height: 1.5rem;
     border-radius: 0.5rem;
   }
 
   &-s56 {
-    width: 3.5rem;
-    height: 3.5rem;
+    @include ui-size(3.5rem);
+
     font-size: 1.1875rem;
     line-height: 1.5rem;
     border-radius: 0.5rem;
   }
 
   &-s64 {
-    width: 4rem;
-    height: 4rem;
+    @include ui-size(4rem);
+
     font-size: 1.75rem;
     line-height: 2rem;
     border-radius: 0.5rem;
   }
 
   &-s96 {
-    width: 6rem;
-    height: 6rem;
+    @include ui-size(6rem);
+
     font-size: 2.75rem;
     line-height: 3.25rem;
     border-radius: 0.5rem;
   }
 
   &-s128 {
-    width: 8rem;
-    height: 8rem;
+    @include ui-size(8rem);
+
     font-size: 2.75rem;
     line-height: 3.25rem;
     border-radius: 0.5rem;

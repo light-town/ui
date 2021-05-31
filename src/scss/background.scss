@@ -1,0 +1,55 @@
+@mixin ui-bg-transparent() {
+  background-color: transparent;
+}
+
+.ui-bg-transparent {
+  @include ui-bg-transparent;
+}
+
+@mixin ui-bg-inherit {
+  background-color: inherit;
+}
+
+.ui-bg-inherit {
+  @include ui-bg-inherit;
+}
+
+@mixin ui-bg-white {
+  background-color: $white;
+}
+
+.ui-bg-white {
+  @include ui-bg-white;
+}
+
+@mixin ui-bg-black {
+  background-color: $black;
+}
+
+.ui-bg-black {
+  @include ui-bg-black;
+}
+
+@mixin ui-bg-gray-50 {
+  background-color: $gray-50;
+}
+
+.ui-bg-gray-50 {
+  @include ui-bg-gray-50;
+}
+
+@mixin ui-bg-gray-75 {
+  background-color: $gray-75;
+}
+
+.ui-bg-gray-75 {
+  @include ui-bg-gray-75;
+}
+
+@mixin ui-bg-gray-100 {
+  background-color: $gray-100;
+}
+
+.ui-bg-gray-100 {
+  @include ui-bg-gray-100;
+}

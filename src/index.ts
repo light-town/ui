@@ -1,7 +1,5 @@
-import "./scss/index.scss";
-
 export { default as UiAlert } from "./components/alert/alert.vue";
-export { default as UiAvatar } from "./components/avatar/index.vue";
+export { default as UiAvatar } from "./components/avatar/avatar.vue";
 export { default as UiBadge } from "./components/badge/index.vue";
 export { default as UiBreadcrumbs } from "./components/breadcrumbs/index.vue";
 export { default as UiButton } from "./components/button/index.vue";
@@ -9,7 +7,7 @@ export { default as UiCard } from "./components/card/index.vue";
 export { default as UiContextMenu } from "./components/context-menu/index.vue";
 export { default as UiDropdown } from "./components/dropdown/index.vue";
 export { default as UiForm } from "./components/form/index.vue";
-export { default as UiGrid } from "./components/grid/index.vue";
+export { default as UiGrid } from "./components/grid/grid.vue";
 export { default as UiInput } from "./components/input/index.vue";
 export { default as UiLoading } from "./components/loading/index.vue";
 export { default as UiMenu } from "./components/menu/index.vue";

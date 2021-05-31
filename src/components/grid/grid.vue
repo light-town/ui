@@ -6,7 +6,8 @@
       [`ui-grid_dir-${direction}`]: direction,
       [`ui-grid_justify-${justify}`]: justify,
       [`ui-grid_align-${alignItems}`]: alignItems,
-      [`ui-grid_wrap-${wrap}`]: wrap
+      [`ui-grid_wrap-${wrap}`]: wrap,
+      [`ui-grid_contained`]: contained
     }"
     @click="$emit('click', $event)"
     @contextmenu="$emit('contextmenu', $event)"
@@ -16,11 +17,14 @@
 </template>
 
 <script>
-export default {
+import Vue from "vue";
+
+export default Vue.extend({
   name: "UiGrid",
   props: {
     justify: {
       type: String,
+      required: false,
       default: "flex-start",
       validator(val) {
         return [
@@ -37,6 +41,7 @@ export default {
     },
     alignItems: {
       type: String,
+      required: false,
       default: "flex-start",
       validator(val) {
         return [
@@ -53,6 +58,7 @@ export default {
     },
     wrap: {
       type: String,
+      required: false,
       default: "nowrap",
       validator(val) {
         return ["nowrap", "wrap", "wrap-reverse"].includes(val);
@@ -61,6 +67,7 @@ export default {
     direction: {
       type: String,
       default: "row",
+      required: false,
       validator(val) {
         return ["row", "column", "row-reverse", "column-reverse"].includes(val);
       }
@@ -69,9 +76,12 @@ export default {
       type: String,
       required: false,
       default: "div"
+    },
+    contained: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import UiGrid from "../grid/index.vue";
+import UiGrid from "../grid/grid.vue";
 
 export default {
   name: "UiPopup",

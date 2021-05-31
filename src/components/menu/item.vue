@@ -42,7 +42,7 @@
 </template>
 
 <script>
-import UiGrid from "../grid/index.vue";
+import UiGrid from "../grid/grid.vue";
 import UiButton from "../button/index.vue";
 import UiPortal from "../portal/index.vue";
 import UiMenu from "../menu/index.vue";

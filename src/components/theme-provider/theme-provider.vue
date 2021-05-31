@@ -1,6 +1,6 @@
 <template>
-  <ui-grid :class="`ui-theme_${mode}`">
-    <ui-grid :id="APP_CONTENT_LAYOUT_ID">
+  <ui-grid :class="`ui-theme_${mode}`" :contained="true">
+    <ui-grid :id="APP_CONTENT_LAYOUT_ID" :contained="true">
       <slot></slot>
     </ui-grid>
     <portal-target name="modals-location" multiple> </portal-target>
@@ -10,7 +10,7 @@
 <script lang="ts">
 import Vue from "vue";
 import PortalVue from "portal-vue";
-import UiGrid from "../grid/index.vue";
+import UiGrid from "../grid/grid.vue";
 import * as config from "../../config";
 
 Vue.use(PortalVue);

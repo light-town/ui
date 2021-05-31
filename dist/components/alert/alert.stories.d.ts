@@ -14,11 +14,11 @@ export declare const Default: AbstractTemplate;
 declare const _default: {
     component: import("vue/types/vue").ExtendedVue<import("vue").default, unknown, unknown, unknown, {
         message: string;
-        severity: string;
+        variant: string;
     }>;
     title: string;
     argTypes: {
-        severity: {
+        variant: {
             control: {
                 type: string;
                 options: string[];

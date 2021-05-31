@@ -74,7 +74,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import UiGrid from "../grid/index.vue";
+import UiGrid from "../grid/grid.vue";
 import UiButton from "../button/index.vue";
 import UiDropdown from "../dropdown/index.vue";
 import UiMenuItem from "../menu/item.vue";

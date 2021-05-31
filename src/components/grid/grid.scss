@@ -1,6 +1,5 @@
 .ui-grid {
-  display: flex;
-  width: 100%;
+  @include ui-flex;
 
   &_dir-row {
     flex-direction: row;
@@ -68,5 +67,9 @@
 
   &_wrap-nowrap {
     flex-wrap: nowrap;
+  }
+
+  &_contained {
+    @include ui-w-full;
   }
 }

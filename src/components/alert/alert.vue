@@ -1,15 +1,19 @@
 <template>
-  <ui-grid align-items="center" :class="['ui-alert', `ui-alert_${severity}`]">
-    <error-icon v-if="severity === 'error'" class="ui-alert__icon"></error-icon>
+  <ui-grid
+    align-items="center"
+    :class="['ui-alert', `ui-alert_${variant}`]"
+    :contained="true"
+  >
+    <error-icon v-if="variant === 'error'" class="ui-alert__icon"></error-icon>
     <warning-icon
-      v-if="severity === 'warning'"
+      v-if="variant === 'warning'"
       class="ui-alert__icon"
     ></warning-icon>
     <check-icon
-      v-if="severity === 'success'"
+      v-if="variant === 'success'"
       class="ui-alert__icon"
     ></check-icon>
-    <info-icon v-if="severity === 'info'" class="ui-alert__icon"></info-icon>
+    <info-icon v-if="variant === 'info'" class="ui-alert__icon"></info-icon>
     <p class="ui-alert__text">
       {{ message }}
     </p>
@@ -18,7 +22,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import UiGrid from "../grid/index.vue";
+import UiGrid from "../grid/grid.vue";
 import ErrorIcon from "../../assets/cancel.svg";
 import WarningIcon from "../../assets/warning.svg";
 import CheckIcon from "../../assets/check.svg";
@@ -36,12 +40,12 @@ export default Vue.extend({
   props: {
     message: {
       type: String,
-      required: false,
-      default: ""
+      required: true
     },
-    severity: {
+    variant: {
       type: String,
-      required: true,
+      required: false,
+      default: "info",
       validator(val: string): boolean {
         return ["info", "warning", "success", "error"].includes(val);
       }

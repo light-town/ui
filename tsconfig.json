@@ -14,9 +14,6 @@
     "incremental": true,
     "declaration": true,
     "baseUrl": ".",
-    "paths": {
-      "@/*": ["src/*"]
-    },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
   "include": [

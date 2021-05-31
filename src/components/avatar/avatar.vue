@@ -1,5 +1,10 @@
 <template>
-  <ui-grid class="ui-avatar" :class="`ui-avatar-s${size}`">
+  <ui-grid
+    class="ui-avatar"
+    :class="`ui-avatar-s${size}`"
+    align-items="center"
+    justify="center"
+  >
     <img v-if="src" class="ui-avatar__img" :src="src" :alt="alt" />
     <div v-else class="ui-avatar__badge">
       {{ firstNameSymbol }}
@@ -9,7 +14,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import UiGrid from "../grid/index.vue";
+import UiGrid from "../grid/grid.vue";
 
 export default Vue.extend({
   name: "UiAvatar",
@@ -24,13 +29,11 @@ export default Vue.extend({
     },
     alt: {
       type: String,
-      required: false,
-      default: "avatar"
+      required: true
     },
     name: {
       type: String,
-      required: false,
-      default: ""
+      required: true
     },
     size: {
       type: Number,
@@ -43,10 +46,8 @@ export default Vue.extend({
   },
   computed: {
     firstNameSymbol(): string {
-      return this.name.length ? this.name[0] : "";
+      return this.name.length ? this.name[0].toUpperCase() : "";
     }
   }
 });
 </script>
-
-<style lang="scss" src="./index.scss"></style>
