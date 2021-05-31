@@ -113,6 +113,7 @@ import UiPopup from "../portal/index.vue";
 import UiMenu from "../menu/index.vue";
 import UiMenuItem from "../menu/item.vue";
 import UiMenuLoading from "../menu/loading.vue";
+import * as config from "../../config";
 
 export default {
   name: "UiTokenSelector",
@@ -206,7 +207,7 @@ export default {
 
       this.root = this.$refs.input;
 
-      const root = document.getElementById("app-page-layout");
+      const root = document.getElementById(config.APP_CONTENT_LAYOUT_ID);
       root.addEventListener("click", this.closeDropdown, {
         once: true,
         capture: true

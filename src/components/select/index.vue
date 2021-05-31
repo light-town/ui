@@ -44,6 +44,7 @@ import UiPortal from "../portal/index.vue";
 import UiMenu from "../menu/index.vue";
 import UiMenuItem from "../menu/item.vue";
 import UiMenuLoading from "../menu/loading.vue";
+import * as config from "../../config";
 
 export default {
   name: "UiSelect",
@@ -108,7 +109,7 @@ export default {
 
       this.$emit("open");
 
-      const root = document.getElementById("app-page-layout");
+      const root = document.getElementById(config.APP_CONTENT_LAYOUT_ID);
       root.addEventListener("click", this.close, {
         once: true,
         capture: true
