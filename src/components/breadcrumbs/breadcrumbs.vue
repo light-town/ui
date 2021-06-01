@@ -33,10 +33,8 @@
           <template #anchor="{ open, opened }">
             <ui-button
               variant="text"
-              :class="[
-                'ui-breadcrumbs__dotted-btn',
-                { 'ui-breadcrumbs__dotted-btn_active': opened }
-              ]"
+              class="ui-breadcrumbs__dotted-btn"
+              :class="{ 'ui-breadcrumbs__dotted-btn_active': opened }"
               @click="open"
             >
               <more-icon class="ui-breadcrumbs__dotted-btn__icon"></more-icon>
@@ -75,7 +73,7 @@
 <script lang="ts">
 import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
-import UiButton from "../button/index.vue";
+import UiButton from "../button/button.vue";
 import UiDropdown from "../dropdown/index.vue";
 import UiMenuItem from "../menu/item.vue";
 import ArrowIcon from "../../assets/right-arrow.svg";
@@ -94,7 +92,8 @@ export default Vue.extend({
   props: {
     items: {
       type: Array,
-      required: true
+      required: false,
+      default: () => []
     },
     uniqueKey: {
       type: String,
@@ -108,7 +107,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    visibleItems(): any {
+    visibleItems(): any[] {
       if (this.short) {
         return [
           this.items[0],
@@ -120,7 +119,7 @@ export default Vue.extend({
 
       return this.items;
     },
-    hiddenItems(): any {
+    hiddenItems(): any[] {
       if (this.short) {
         return this.items.slice(1, this.items.length - 2);
       }
@@ -135,7 +134,7 @@ export default Vue.extend({
     }
   },
   methods: {
-    handleItemClick(e: MouseEvent, item: any, click: any) {
+    handleItemClick(e: MouseEvent, item: any, click: any): void {
       if (item.isDropdown) return;
 
       click(e);
@@ -145,5 +144,3 @@ export default Vue.extend({
   }
 });
 </script>
-
-<style lang="scss" src="./index.scss"></style>

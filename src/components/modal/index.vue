@@ -35,7 +35,7 @@
 
 <script>
 import UiGrid from "../grid/grid.vue";
-import UiButton from "../button/index.vue";
+import UiButton from "../button/button.vue";
 
 export default {
   name: "UiModal",

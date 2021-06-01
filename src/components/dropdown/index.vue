@@ -21,7 +21,7 @@
 <script>
 import UiGrid from "../grid/grid.vue";
 import UiPortal from "../portal/index.vue";
-import UiButton from "../button/index.vue";
+import UiButton from "../button/button.vue";
 import UiMenu from "../menu/index.vue";
 import UiMenuLoading from "../menu/loading.vue";
 import * as config from "../../config";

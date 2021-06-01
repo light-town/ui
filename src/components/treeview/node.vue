@@ -31,7 +31,7 @@
 
 <script>
 import UiGrid from "../grid/grid.vue";
-import UiButton from "../button/index.vue";
+import UiButton from "../button/button.vue";
 import ArrowIcon from "../../assets/triangle.svg";
 
 export default {

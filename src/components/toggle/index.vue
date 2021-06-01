@@ -17,13 +17,13 @@
 
 <script lang="ts">
 import Vue from "vue";
-import UiButton from "../button/index.vue";
-import UiLoading from "../loading/index.vue";
+import UiButton from "../button/button.vue";
+import UiLoading from "../loading/loading.vue";
 import CheckIcon from "../../assets/check-2.svg";
 import CrossIcon from "../../assets/cross.svg";
 
 export default Vue.extend({
-  name: "Toggle",
+  name: "UiToggle",
   components: {
     UiButton,
     UiLoading,
@@ -71,5 +71,3 @@ export default Vue.extend({
   }
 });
 </script>
-
-<style lang="scss" src="./index.scss"></style>

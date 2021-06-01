@@ -6,7 +6,7 @@
 
 <script>
 import UiGrid from "../grid/grid.vue";
-import UiLoading from "../loading/index.vue";
+import UiLoading from "../loading/loading.vue";
 
 export default {
   name: "UiMenuLoading",

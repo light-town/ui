@@ -1,0 +1,114 @@
+$ui-breadcrumbs-item-text: $gray-450;
+
+$ui-breadcrumbs-separator-fill: $gray-400;
+
+$ui-breadcrumbs-dropdown-item-text: $gray-550;
+$ui-breadcrumbs-dropdown-item-bg: $transparent;
+
+$ui-breadcrumbs-dropdown-item-hover-text: $gray-450;
+$ui-breadcrumbs-dropdown-item-hover-bg: $gray-100;
+
+$ui-breadcrumbs-dropdown-item-focus-bs: $gray-150;
+
+$ui-breadcrumbs-dotted-btn-icon: $gray-450;
+$ui-breadcrumbs-dotted-btn-hover-icon: $gray-400;
+$ui-breadcrumbs-dotted-btn-hover-bg: $gray-100;
+$ui-breadcrumbs-dotted-btn-active-icon: $gray-400;
+$ui-breadcrumbs-dotted-btn-active-bg: $gray-100;
+
+.ui-breadcrumbs {
+  &__item {
+    $space: 0.5rem;
+
+    display: inline-flex;
+    width: auto;
+
+    margin-right: $space;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    & > * {
+      margin-right: $space;
+    }
+
+    & > *:last-child {
+      margin-right: 0;
+    }
+
+    &__btn {
+      font-size: 15px;
+      font-weight: 500;
+
+      color: $ui-breadcrumbs-dropdown-item-text;
+      background-color: $ui-breadcrumbs-dropdown-item-bg;
+
+      padding: 4px 8px;
+
+      &:hover {
+        color: $ui-breadcrumbs-dropdown-item-hover-text !important;
+        background-color: $ui-breadcrumbs-dropdown-item-hover-bg !important;
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 0.25rem $ui-breadcrumbs-dropdown-item-focus-bs;
+      }
+    }
+  }
+
+  &__separator {
+    @include ui-size(px-to-rem(12px));
+    @include ui-flex-fixed;
+
+    fill: $ui-breadcrumbs-separator-fill;
+  }
+
+  &__dotted-btn {
+    @include ui-size(px-to-rem(36px));
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    &:hover {
+      background-color: $ui-breadcrumbs-dotted-btn-hover-bg !important;
+    }
+
+    &__icon {
+      @include ui-size(1rem);
+
+      fill: $ui-breadcrumbs-dotted-btn-icon;
+    }
+
+    &:hover {
+      fill: $ui-breadcrumbs-dotted-btn-hover-icon;
+    }
+
+    &:active {
+      fill: $ui-breadcrumbs-dotted-btn-active-icon;
+    }
+
+    &_active {
+      fill: $ui-breadcrumbs-dotted-btn-active-icon;
+      background-color: $ui-breadcrumbs-dotted-btn-active-bg;
+    }
+  }
+
+  &__dropdown-item {
+    &__text {
+      font-size: 14px;
+      font-weight: 400;
+
+      color: $ui-breadcrumbs-dropdown-item-text;
+    }
+
+    &__icon {
+      @include ui-size(1.25rem);
+
+      margin-right: 24px;
+
+      fill: $ui-breadcrumbs-dropdown-item-text;
+    }
+  }
+}

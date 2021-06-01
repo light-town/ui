@@ -43,7 +43,7 @@
 
 <script>
 import UiGrid from "../grid/grid.vue";
-import UiButton from "../button/index.vue";
+import UiButton from "../button/button.vue";
 import UiPortal from "../portal/index.vue";
 import UiMenu from "../menu/index.vue";
 import ArrowIcon from "../../assets/right-arrow.svg";

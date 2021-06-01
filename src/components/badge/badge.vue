@@ -1,5 +1,7 @@
 <template>
-  <span :class="['ui-badge', `ui-badge_${color}`]"><slot></slot></span>
+  <span class="ui-badge" :class="[, `ui-badge_${color}`]">
+    <slot>{{ title }}</slot>
+  </span>
 </template>
 
 <script lang="ts">
@@ -10,20 +12,25 @@ export default Vue.extend({
   props: {
     variant: {
       type: String,
-      required: true,
+      required: false,
+      default: "contained",
       validator(val: string): boolean {
         return ["contained", "outlined"].includes(val);
       }
     },
     color: {
       type: String,
-      required: true,
+      required: false,
+      default: "green",
       validator(val: string): boolean {
         return ["black", "blue", "green"].includes(val);
       }
+    },
+    title: {
+      type: String,
+      required: false,
+      default: ""
     }
   }
 });
 </script>
-
-<style lang="scss" src="./index.scss"></style>

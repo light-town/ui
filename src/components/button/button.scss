@@ -1,0 +1,147 @@
+$ui-button-contained-text: $white;
+$ui-button-contained-bg: $green-400;
+$ui-button-contained-border: $green-400;
+$ui-button-contained-hover-text: $white;
+$ui-button-contained-hover-bg: $green-500;
+$ui-button-contained-hover-border: $green-500;
+$ui-button-contained-active-text: $white;
+$ui-button-contained-active-bg: $green-500;
+$ui-button-contained-active-border: $gray-500;
+$ui-button-contained-disabled-text: $white;
+$ui-button-contained-disabled-bg: $gray-350;
+$ui-button-contained-disabled-border: $gray-350;
+
+$ui-button-outlined-text: $green-400;
+$ui-button-outlined-bg: $transparent;
+$ui-button-outlined-border: $green-400;
+$ui-button-outlined-hover-text: $green-400;
+$ui-button-outlined-hover-bg: $green-50;
+$ui-button-outlined-hover-border: $green-400;
+$ui-button-outlined-active-text: $green-400;
+$ui-button-outlined-active-bg: $green-100;
+$ui-button-outlined-active-border: $green-500;
+$ui-button-outlined-disabled-text: $gray-300;
+$ui-button-outlined-disabled-bg: $transparent;
+$ui-button-outlined-disabled-border: $gray-300;
+
+$ui-button-text-text: $green-400;
+$ui-button-text-bg: $transparent;
+$ui-button-text-border: $transparent;
+$ui-button-text-hover-text: $green-400;
+$ui-button-text-hover-bg: $green-50;
+$ui-button-text-active-text: $green-400;
+$ui-button-text-active-bg: $green-100;
+$ui-button-text-disabled-text: $gray-300;
+$ui-button-text-disabled-bg: $transparent;
+
+$ui-button-focus-border: $green-200;
+$ui-button-focus-bg: $green-100;
+
+$ui-button-loading-text: $white;
+$ui-button-loading-border: $green-400;
+$ui-button-loading-bg: $green-400;
+
+.ui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.5em 1.5em;
+
+  font-size: 0.875em;
+  font-weight: 500;
+
+  border-radius: 0.25rem;
+
+  cursor: pointer;
+
+  user-select: none;
+
+  transition: background 0.3s ease-out, color 0.3s ease-out, fill 0.3s ease-out,
+    border 0.3s ease-out, box-shadow 0.3s;
+
+  & > * {
+    margin-right: 1.25rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &--contained {
+    color: $ui-button-contained-text;
+    background-color: $ui-button-contained-bg;
+    border: 1px solid $ui-button-contained-border;
+
+    &:hover:enabled {
+      color: $ui-button-contained-hover-text;
+      background-color: $ui-button-contained-hover-bg;
+      border: 1px solid $ui-button-contained-hover-border;
+    }
+
+    &:active:enabled {
+      color: $ui-button-contained-active-text;
+      background-color: $ui-button-contained-active-bg;
+      border: 1px solid $ui-button-contained-active-border;
+    }
+
+    &:disabled {
+      color: $ui-button-contained-disabled-text;
+      background-color: $ui-button-contained-disabled-bg;
+      border: 1px solid $ui-button-contained-disabled-border;
+    }
+  }
+
+  &--outlined {
+    color: $ui-button-outlined-text;
+    background-color: $ui-button-outlined-bg;
+    border: 1px solid $ui-button-outlined-border;
+
+    &:hover:enabled {
+      color: $ui-button-outlined-hover-text;
+      background-color: $ui-button-outlined-hover-bg;
+      border: 1px solid $ui-button-outlined-hover-border;
+    }
+
+    &:active:enabled {
+      color: $ui-button-outlined-active-text;
+      background-color: $ui-button-outlined-active-bg;
+      border: 1px solid $ui-button-outlined-active-border;
+    }
+
+    &:disabled {
+      color: $ui-button-outlined-disabled-text;
+      background-color: $ui-button-outlined-disabled-bg;
+      border: 1px solid $ui-button-outlined-disabled-border;
+    }
+  }
+
+  &--text {
+    color: $ui-button-text-text;
+    background-color: $ui-button-text-bg;
+    border: 1px solid $ui-button-text-border;
+
+    &:hover:enabled {
+      color: $ui-button-text-hover-text;
+      background-color: $ui-button-text-hover-bg;
+    }
+
+    &:active:enabled {
+      color: $ui-button-text-active-text;
+      background-color: $ui-button-text-active-bg;
+    }
+
+    &:disabled {
+      color: $ui-button-text-disabled-text;
+      background-color: $ui-button-text-disabled-bg;
+    }
+  }
+
+  &:focus {
+    @include ui-box-shadow($ui-button-focus-bg);
+  }
+}

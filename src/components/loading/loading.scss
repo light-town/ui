@@ -1,14 +1,12 @@
-#theme[data-theme-mode="light"] {
-  --color-ui-loading-border: var(--color-gray-200);
-  --color-ui-loading-border-top: var(--color-gray-500);
-}
+$ui-loading-border: $gray-200;
+$ui-loading-border-top: $gray-500;
 
 .ui-loading {
   display: inline-flex;
 
   &__spinner {
-    border-color: var(--color-ui-loading-border);
-    border-top-color: var(--color-ui-loading-border-top);
+    border-color: $ui-loading-border;
+    border-top-color: $ui-loading-border-top;
 
     position: relative;
     display: inline-flex;
