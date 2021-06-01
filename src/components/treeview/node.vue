@@ -29,12 +29,13 @@
   </ui-button>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
 import UiButton from "../button/button.vue";
 import ArrowIcon from "../../assets/triangle.svg";
 
-export default {
+export default Vue.extend({
   name: "UiTreeViewNode",
   components: {
     UiGrid,
@@ -67,7 +68,5 @@ export default {
       opened: false
     };
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.vue"></style>

@@ -1,6 +1,4 @@
-#theme[data-theme-mode="light"] {
-  --color-ui-popup-box-shadow: var(--color-gray-100);
-}
+$ui-popup-box-shadow: $gray-100;
 
 .ui-popup {
   display: inline-flex;
@@ -17,7 +15,7 @@
 
   z-index: 30;
 
-  box-shadow: 0 0 10px var(--color-ui-popup-box-shadow);
+  box-shadow: 0 0 10px $ui-popup-box-shadow;
 
   &_visible {
     visibility: visible;

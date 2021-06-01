@@ -1,0 +1,99 @@
+@mixin ui-overflow-auto {
+  overflow: auto;
+}
+
+.ui-overflow-auto {
+  @include ui-overflow-auto;
+}
+
+@mixin ui-overflow-hidden {
+  overflow: hidden;
+}
+
+.ui-overflow-hidden {
+  @include ui-overflow-hidden;
+}
+
+@mixin ui-overflow-visible {
+  overflow: visible;
+}
+
+.ui-overflow-visible {
+  @include ui-overflow-visible;
+}
+
+@mixin ui-overflow-scroll {
+  overflow: scroll;
+}
+
+.ui-overflow-scroll {
+  @include ui-overflow-scroll;
+}
+
+// X
+
+@mixin ui-overflow-x-auto {
+  overflow-x: auto;
+}
+
+.ui-overflow-x-auto {
+  @include ui-overflow-x-auto;
+}
+
+@mixin ui-overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.ui-overflow-x-hidden {
+  @include ui-overflow-x-hidden;
+}
+
+@mixin ui-overflow-x-visible {
+  overflow-x: visible;
+}
+
+.ui-overflow-x-visible {
+  @include ui-overflow-x-visible;
+}
+
+@mixin ui-overflow-x-scroll {
+  overflow-x: scroll;
+}
+
+.ui-overflow-x-scroll {
+  @include ui-overflow-x-scroll;
+}
+
+// Y
+
+@mixin ui-overflow-y-auto {
+  overflow-y: auto;
+}
+
+.ui-overflow-y-auto {
+  @include ui-overflow-y-auto;
+}
+
+@mixin ui-overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.ui-overflow-y-hidden {
+  @include ui-overflow-y-hidden;
+}
+
+@mixin ui-overflow-y-visible {
+  overflow-y: visible;
+}
+
+.ui-overflow-y-visible {
+  @include ui-overflow-y-visible;
+}
+
+@mixin ui-overflow-y-scroll {
+  overflow-y: scroll;
+}
+
+.ui-overflow-y-scroll {
+  @include ui-overflow-y-scroll;
+}

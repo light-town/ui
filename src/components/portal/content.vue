@@ -1,17 +1,41 @@
 <template>
   <ui-grid
-    :class="['ui-popup', { 'ui-popup_visible': show }]"
+    class="ui-popup"
     direction="column"
+    :class="{ 'ui-popup_visible': show }"
     :style="{ left: localX, top: localY }"
   >
     <slot></slot>
   </ui-grid>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
 
-export default {
+interface Data {
+  localX: string;
+  localY: string;
+  show: boolean;
+}
+
+interface Methods {
+  updatePos: () => void;
+}
+
+interface Computed {
+  root: any;
+}
+
+interface Props {
+  anchor: any;
+  position: string;
+  contentClass: string;
+  x: number;
+  y: number;
+}
+
+export default Vue.extend<Data, Methods, Computed, Props>({
   name: "UiPopup",
   components: {
     UiGrid
@@ -53,8 +77,8 @@ export default {
   },
   data() {
     return {
-      localX: 0,
-      localY: 0,
+      localX: "0",
+      localY: "0",
       show: false
     };
   },
@@ -133,7 +157,5 @@ export default {
       this.show = true;
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

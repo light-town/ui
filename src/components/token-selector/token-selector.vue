@@ -1,12 +1,10 @@
 <template>
   <ui-grid
     align-items="center"
-    :class="[
-      'ui-token-selector',
-      {
-        'ui-token-selector_focus': isFocus
-      }
-    ]"
+    class="ui-token-selector"
+    :class="{
+      'ui-token-selector_focus': isFocus
+    }"
     tabindex="0"
     @click.native="handleGlobalClick"
     @keydown.native="handleGlobalKeyDown"
@@ -23,9 +21,7 @@
         :token="token"
         :handleCloseBtnClick="handleCloseBtnClick"
       >
-        <ui-token @close="handleCloseBtnClick(token)">
-          {{ token.name }}
-        </ui-token>
+        <ui-token @close="handleCloseBtnClick(token)" :title="token.name" />
       </slot>
     </ui-grid>
 
@@ -105,17 +101,18 @@
   </ui-grid>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import * as uuid from "uuid";
 import UiGrid from "../grid/grid.vue";
 import UiToken from "../token/token.vue";
-import UiPopup from "../portal/index.vue";
-import UiMenu from "../menu/index.vue";
+import UiPopup from "../portal/portal.vue";
+import UiMenu from "../menu/menu.vue";
 import UiMenuItem from "../menu/item.vue";
 import UiMenuLoading from "../menu/loading.vue";
 import * as config from "../../config";
 
-export default {
+export default Vue.extend<any, any, any, any>({
   name: "UiTokenSelector",
   components: {
     UiGrid,
@@ -137,18 +134,18 @@ export default {
     },
     hideDropdownWithNoItems: {
       type: Boolean,
-      requred: false,
-      defualt: false
+      required: false,
+      default: false
     },
     allowUserDefinedTokens: {
       type: Boolean,
-      requred: false,
-      defualt: false
+      required: false,
+      default: false
     },
     loading: {
       type: Boolean,
-      requred: false,
-      defualt: false
+      required: false,
+      default: false
     },
     value: {
       type: Array,
@@ -168,8 +165,8 @@ export default {
     remainingDropdownItems() {
       const re = new RegExp(`^${this.inputText.toLowerCase()}`);
       return this.dropdownItems.filter(
-        i =>
-          !this.tokens.find(t => t.id === i.id) &&
+        (i: any) =>
+          !this.tokens.find((t: any) => t.id === i.id) &&
           (!this.inputText.length || re.test(i.name.trim().toLowerCase()))
       );
     }
@@ -189,14 +186,14 @@ export default {
     this.isFocus = document.activeElement === this.$refs?.input;
   },
   methods: {
-    addToken(token) {
+    addToken(token: any) {
       this.tokens.push(token);
 
       this.$emit("input", this.tokens);
       this.$emit("token-added", token);
     },
-    removeToken(token) {
-      this.tokens = this.tokens.filter(t => t !== token);
+    removeToken(token: any) {
+      this.tokens = this.tokens.filter((t: any) => t !== token);
 
       this.$emit("input", this.tokens);
       this.$emit("token-removed", token);
@@ -208,6 +205,9 @@ export default {
       this.root = this.$refs.input;
 
       const root = document.getElementById(config.APP_CONTENT_LAYOUT_ID);
+
+      if (!root) return;
+
       root.addEventListener("click", this.closeDropdown, {
         once: true,
         capture: true
@@ -219,7 +219,7 @@ export default {
 
       window.addEventListener("blur", this.close, { once: true });
     },
-    closeDropdown(e) {
+    closeDropdown(e: any) {
       if (!this.$refs.menu) return;
 
       this.$refs.menu.close();
@@ -231,7 +231,7 @@ export default {
     clearTextInput() {
       this.inputText = "";
     },
-    handleDropdownItemClick(dropdownItem) {
+    handleDropdownItemClick(dropdownItem: any) {
       this.closeDropdown();
 
       this.clearTextInput();
@@ -240,7 +240,7 @@ export default {
     },
     handleEnterKeyPress() {
       const existsToken = this.dropdownItems.find(
-        i => i.name === this.inputText
+        (i: any) => i.name === this.inputText
       );
 
       if (existsToken) {
@@ -253,7 +253,7 @@ export default {
 
       this.clearTextInput();
     },
-    handleCloseBtnClick(token) {
+    handleCloseBtnClick(token: any) {
       this.removeToken(token);
 
       this.closeDropdown();
@@ -263,7 +263,7 @@ export default {
 
       this.openDropdown();
     },
-    handleGlobalKeyDown(e) {
+    handleGlobalKeyDown(e: any) {
       if (!this.root || !["ArrowUp", "ArrowDown", "Enter"].includes(e.code))
         return;
 
@@ -307,7 +307,7 @@ export default {
         const currentItemId = this.$refs.menu.getActiveItem()?.id;
 
         const currentItem = this.remainingDropdownItems.find(
-          i => i.id === currentItemId
+          (i: any) => i.id === currentItemId
         );
 
         if (!currentItem) {
@@ -323,7 +323,7 @@ export default {
         });
       }
     },
-    handleInputKeyDown(e) {
+    handleInputKeyDown(e: any) {
       if (
         e.code !== "Backspace" ||
         this.inputText.length ||
@@ -346,7 +346,5 @@ export default {
       this.clearTextInput();
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

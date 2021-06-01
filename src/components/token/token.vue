@@ -4,9 +4,11 @@
     @click.stop="$emit('click')"
     @keydown="$emit('keydown', $event)"
   >
-    <p class="ui-token__text">
-      {{ title }}
-    </p>
+    <slot>
+      <p class="ui-token__text">
+        {{ title }}
+      </p>
+    </slot>
     <close-icon
       v-if="!viewOnly"
       class="ui-token__close-btn"

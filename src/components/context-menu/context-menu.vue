@@ -1,5 +1,5 @@
 <template>
-  <ui-grid>
+  <ui-grid class="ui-context-menu">
     <slot> </slot>
     <ui-portal v-if="Boolean(root)" :anchor="{ root }" :x="x" :y="y">
       <ui-menu ref="menu" @menu-item-click="handleItemClick">
@@ -9,13 +9,14 @@
   </ui-grid>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
-import UiPortal from "../portal/index.vue";
-import UiMenu from "../menu/index.vue";
+import UiPortal from "../portal/portal.vue";
+import UiMenu from "../menu/menu.vue";
 import * as config from "../../config";
 
-export default {
+export default Vue.extend<any, any, any, any>({
   name: "UiContextMenu",
   components: {
     UiGrid,
@@ -47,7 +48,7 @@ export default {
     if (this.anchorRef) this.anchorRef.$off("contextmenu", this.open);
   },
   methods: {
-    open(e) {
+    open(e: any) {
       if (this.root) {
         this.close();
         this.$nextTick(() => {
@@ -65,6 +66,9 @@ export default {
       if (this.anchorRef) this.anchorRef._data.opened = true;
 
       const root = document.getElementById(config.APP_CONTENT_LAYOUT_ID);
+
+      if (!root) return;
+
       root.addEventListener("click", this.close, {
         once: true,
         capture: true
@@ -76,7 +80,7 @@ export default {
 
       window.addEventListener("blur", this.close, { once: true });
     },
-    close(e) {
+    close(e: any) {
       if (!this.$refs.menu) return;
 
       this.$refs.menu.close();
@@ -87,14 +91,12 @@ export default {
         this.$emit("close", e);
       });
     },
-    handleItemClick(e) {
+    handleItemClick(e: any) {
       this.$nextTick(() => {
         this.$emit("menu-item-click", e);
         this.close(e);
       });
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

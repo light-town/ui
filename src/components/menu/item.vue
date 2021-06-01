@@ -2,7 +2,8 @@
   <ui-button
     component="li"
     variant="text"
-    :class="['ui-menu-item', { 'ui-menu-item_active': active }]"
+    class="ui-menu-item"
+    :class="{ 'ui-menu-item_active': active }"
     @click.native="$emit('click', $event)"
     @mouseover.native="$emit('mouseover', $event)"
     @mouseenter.native="$emit('mouseenter', $event)"
@@ -21,7 +22,7 @@
         <arrow-icon
           v-if="existsSubmenu"
           class="ui-menu-item__submenu-expand-icon"
-        ></arrow-icon>
+        />
       </slot>
     </ui-grid>
     <ui-portal
@@ -44,8 +45,8 @@
 <script>
 import UiGrid from "../grid/grid.vue";
 import UiButton from "../button/button.vue";
-import UiPortal from "../portal/index.vue";
-import UiMenu from "../menu/index.vue";
+import UiPortal from "../portal/portal.vue";
+import UiMenu from "../menu/menu.vue";
 import ArrowIcon from "../../assets/right-arrow.svg";
 
 export default {
@@ -92,5 +93,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" src="./index.scss"></style>

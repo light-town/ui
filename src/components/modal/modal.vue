@@ -33,11 +33,12 @@
   </portal>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
 import UiButton from "../button/button.vue";
 
-export default {
+export default Vue.extend({
   name: "UiModal",
   components: {
     UiGrid,
@@ -60,11 +61,9 @@ export default {
     }
   },
   methods: {
-    handleBackgroundClick(e) {
+    handleBackgroundClick(e: Event) {
       this.$emit("close", e);
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

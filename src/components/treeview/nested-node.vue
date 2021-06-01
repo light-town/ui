@@ -1,5 +1,5 @@
 <template>
-  <ui-grid component="li" direction="column">
+  <ui-grid component="li" direction="column" :contained="true">
     <slot
       :node="node"
       :nestedNodes="nestedNodes(node)"
@@ -11,6 +11,7 @@
       component="ul"
       direction="column"
       class="ui-tree-view__nested-nodes"
+      :contained="true"
     >
       <nested-node
         v-for="node in nestedNodes(node)"
@@ -71,5 +72,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss" src="./index.vue"></style>

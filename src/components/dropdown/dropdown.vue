@@ -18,15 +18,16 @@
   </ui-grid>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
-import UiPortal from "../portal/index.vue";
+import UiPortal from "../portal/portal.vue";
 import UiButton from "../button/button.vue";
-import UiMenu from "../menu/index.vue";
+import UiMenu from "../menu/menu.vue";
 import UiMenuLoading from "../menu/loading.vue";
 import * as config from "../../config";
 
-export default {
+export default Vue.extend({
   name: "UiDropdown",
   components: {
     UiGrid,
@@ -51,9 +52,9 @@ export default {
     return { root: null };
   },
   methods: {
-    open(e) {
+    open(e: any) {
       if (this.root) {
-        this.close();
+        this.close(e);
         this.$nextTick(() => {
           this.$nextTick(() => {
             this.open(e);
@@ -67,6 +68,9 @@ export default {
       this.$emit("open");
 
       const root = document.getElementById(config.APP_CONTENT_LAYOUT_ID);
+
+      if (!root) return;
+
       root.addEventListener("click", this.close, {
         once: true,
         capture: true
@@ -78,17 +82,15 @@ export default {
 
       window.addEventListener("blur", this.close, { once: true });
     },
-    close(e) {
+    close(e: any) {
       if (!this.$refs.menu || !this.root) return;
 
-      this.$refs.menu.close();
+      (this.$refs.menu as any).close();
       this.$nextTick(() => {
         this.root = null;
         this.$emit("close", e);
       });
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

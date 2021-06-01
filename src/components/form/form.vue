@@ -4,20 +4,19 @@
   </ui-grid>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
 
-export default {
+export default Vue.extend({
   name: "UiForm",
   components: {
     UiGrid
   },
   methods: {
-    onSubmit(e) {
+    onSubmit(e: any) {
       this.$emit("submit", e);
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

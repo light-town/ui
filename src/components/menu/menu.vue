@@ -10,11 +10,25 @@
   </ui-grid>
 </template>
 
-<script>
-import * as uuid from "uuid";
+<script lang="ts">
+import Vue from "vue";
+import uuid from "uuid";
 import UiGrid from "../grid/grid.vue";
 
-export default {
+interface Data {
+  context: {
+    root: any;
+    items: any[];
+    activeItemId: string | null;
+    isAvailableShowing: boolean;
+  };
+}
+interface Props {
+  rootMenuRef: object;
+  focusable: boolean;
+}
+
+export default Vue.extend<Data, any, any, Props>({
   name: "UiMenu",
   components: {
     UiGrid
@@ -48,8 +62,10 @@ export default {
   },
   mounted() {
     this.context.items = (this.$slots.default || [])
-      .filter(i => i.componentInstance)
-      .map(({ componentInstance: vm }) => {
+      .filter((i: any) => i.componentInstance)
+      .map(({ componentInstance: vm }: any) => {
+        if (!vm) return {};
+
         const id = vm.id ?? uuid.v4();
         const mouseEnterHandler = this.handleItemEnter.bind(this, vm);
         const mouseLeaveHandler = this.handleItemLeave.bind(this, vm);
@@ -83,11 +99,9 @@ export default {
     });
   },
   updated() {
-    /*  if (this.context.items.length) this.close(); */
-
     this.context.items = (this.$slots.default || [])
-      .filter(i => i.componentInstance)
-      .map(({ componentInstance: vm }) => {
+      .filter((i: any) => i.componentInstance)
+      .map(({ componentInstance: vm }: any) => {
         const id = vm.id ?? uuid.v4();
         const mouseEnterHandler = this.handleItemEnter.bind(this, vm);
         const mouseLeaveHandler = this.handleItemLeave.bind(this, vm);
@@ -121,7 +135,7 @@ export default {
     });
   },
   methods: {
-    handleItemEnter(vm) {
+    handleItemEnter(vm: any) {
       if (this.context.activeItemId === vm.id) return;
 
       this.closeSubmenus();
@@ -132,7 +146,7 @@ export default {
       this.$nextTick(() => {
         this.$nextTick(() => {
           const currentItem = this.context.items.find(
-            i => i.id === this.context.activeItemId
+            (i: any) => i.id === this.context.activeItemId
           );
 
           if (currentItem?.vm.$refs.submenu)
@@ -141,7 +155,7 @@ export default {
         });
       });
     },
-    handleItemLeave(vm) {
+    handleItemLeave(vm: any): any {
       if (vm.existsSubmenu) {
         return;
       }
@@ -150,19 +164,19 @@ export default {
     },
     handleItemClick() {
       const vm = this.context.items.find(
-        i => i.id === this.context.activeItemId
+        (i: any) => i.id === this.context.activeItemId
       )?.vm;
 
       this.$emit("menu-item-click", vm);
     },
-    handleMenuItemClick(e) {
+    handleMenuItemClick(e: any) {
       this.$emit("menu-item-click", e);
     },
-    hadnleKeyDown(e) {
+    hadnleKeyDown(e: any) {
       this.context.isAvailableShowing = false;
 
       let currentIndex = this.context.items.findIndex(
-        i => i.id === this.context.activeItemId
+        (i: any) => i.id === this.context.activeItemId
       );
 
       switch (e.code) {
@@ -223,7 +237,7 @@ export default {
       }
     },
     close() {
-      this.context.items.forEach(i => {
+      this.context.items.forEach((i: any) => {
         i.vm.$off("mouseenter", i.mouseEnterHandler);
         i.vm.$off("mouseleave", i.mouseLeaveHandler);
         i.vm.$off(
@@ -240,25 +254,27 @@ export default {
       });
     },
     closeSubmenus() {
-      this.context.items.forEach(i => {
+      this.context.items.forEach((i: any) => {
         if (i.vm.$refs.submenu) {
           i.vm.$refs.submenu.close();
           i.vm.$refs.submenu.$destroy();
         }
       });
     },
-    setActiveItem(id) {
+    setActiveItem(id: any) {
       this.context.activeItemId = id;
     },
-    getItem(id) {
-      return this.context.items.find(i => i.id === id);
+    getItem(id: any) {
+      return this.context.items.find((i: any) => i.id === id);
     },
     getActiveItem() {
-      return this.context.items.find(i => i.id === this.context.activeItemId);
+      return this.context.items.find(
+        (i: any) => i.id === this.context.activeItemId
+      );
     },
-    hasNextItem(id) {
+    hasNextItem(id: any) {
       const activableItems = this.context.items.filter(
-        i => i.vm.$options.activable
+        (i: any) => i.vm.$options.activable
       );
 
       for (let i = 0; i < activableItems.length; ++i) {
@@ -269,9 +285,9 @@ export default {
 
       return false;
     },
-    getNextItem(id) {
+    getNextItem(id: any) {
       const activableItems = this.context.items.filter(
-        i => i.vm.$options.activable
+        (i: any) => i.vm.$options.activable
       );
 
       for (let i = 0; i < activableItems.length; ++i) {
@@ -280,9 +296,9 @@ export default {
         }
       }
     },
-    hasPreviousItem(id) {
+    hasPreviousItem(id: any) {
       const activableItems = this.context.items.filter(
-        i => i.vm.$options.activable
+        (i: any) => i.vm.$options.activable
       );
 
       for (let i = 0; i < activableItems.length; ++i) {
@@ -293,9 +309,9 @@ export default {
 
       return false;
     },
-    getPreviousItem(id) {
+    getPreviousItem(id: any): any {
       const activableItems = this.context.items.filter(
-        i => i.vm.$options.activable
+        (i: any) => i.vm.$options.activable
       );
 
       for (let i = 0; i < activableItems.length; ++i) {
@@ -305,7 +321,5 @@ export default {
       }
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>
