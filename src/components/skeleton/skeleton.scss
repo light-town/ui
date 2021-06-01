@@ -1,12 +1,10 @@
-#theme[data-theme-mode="light"] {
-  --color-ui-skeleton-bg-color: rgba(0, 0, 0, 0.11);
-}
+$ui-skeleton-bg-color: rgba(0, 0, 0, 0.11);
 
 .ui-skeleton {
   display: flex;
   flex-shrink: 0;
   flex-grow: 0;
-  background-color: var(--color-ui-skeleton-bg-color);
+  background-color: $ui-skeleton-bg-color;
 
   &__pulse {
     animation: pulse 1.5s ease-in-out 0.5s infinite;

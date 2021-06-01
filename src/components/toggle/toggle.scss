@@ -1,0 +1,96 @@
+$ui-toggle-bg: $gray-350;
+$ui-toggle-checked-bg: $green-400;
+
+$ui-toggle-icon-bg: $white;
+
+$ui-toggle-icon-fill: $gray-350;
+$ui-toggle-checked-icon-fill: $green-400;
+
+$ui-toggle-spinner-primary: $white;
+$ui-toggle-spinner-secondary: $gray-300;
+
+$ui-toggle-checked-spinner-primary: $white;
+$ui-toggle-checked-spinner-secondary: $green-300;
+
+.ui-toggle {
+  position: relative;
+
+  width: 3rem;
+  height: 1.5rem;
+
+  background-color: $ui-toggle-bg;
+
+  border-radius: 0.75rem;
+
+  transition: all 0.4s ease;
+
+  border: none;
+
+  padding: 0;
+
+  &__icon {
+    display: inline-flex;
+
+    position: absolute;
+
+    top: 0.125rem;
+    left: 0.125rem;
+
+    @include ui-size(1.25rem);
+
+    border-radius: 50%;
+
+    background-color: $ui-toggle-icon-bg;
+
+    transition: all 0.2s ease !important;
+
+    align-items: center;
+    justify-content: center;
+
+    & > * {
+      @include ui-size(0.625rem);
+
+      fill: $ui-toggle-icon-fill;
+    }
+  }
+
+  &:hover,
+  &:disabled {
+    background-color: $ui-toggle-bg !important;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+  }
+
+  &_checked {
+    background-color: $ui-toggle-checked-bg;
+
+    & > .ui-toggle__icon {
+      transform: translateX(1.5rem);
+
+      & > * {
+        fill: $ui-toggle-checked-icon-fill;
+      }
+    }
+
+    &:hover,
+    &:disabled {
+      background-color: $ui-toggle-checked-bg !important;
+    }
+
+    & > .ui-loading {
+      & > .ui-loading__spinner {
+        border-color: $ui-toggle-checked-spinner-secondary !important;
+        border-top-color: $ui-toggle-checked-spinner-primary !important;
+      }
+    }
+  }
+
+  & > .ui-loading {
+    & > .ui-loading__spinner {
+      border-color: $ui-toggle-spinner-secondary;
+      border-top-color: $ui-toggle-spinner-primary;
+    }
+  }
+}

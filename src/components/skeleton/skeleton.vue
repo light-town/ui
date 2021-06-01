@@ -1,13 +1,15 @@
 <template>
   <span
-    :class="['ui-skeleton', 'ui-skeleton__pulse']"
+    class="ui-skeleton ui-skeleton__pulse"
     :style="{ width, height, borderRadius: radius }"
   >
   </span>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
   name: "UiSkeleton",
   props: {
     width: {
@@ -21,10 +23,8 @@ export default {
     radius: {
       type: String,
       required: false,
-      default: "4px"
+      default: "0.25rem"
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

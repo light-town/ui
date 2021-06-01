@@ -37,5 +37,3 @@ export default Vue.extend({
   }
 });
 </script>
-
-<style lang="scss" src="./theme-provider.scss"></style>
