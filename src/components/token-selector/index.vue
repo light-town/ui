@@ -108,7 +108,7 @@
 <script>
 import * as uuid from "uuid";
 import UiGrid from "../grid/grid.vue";
-import UiToken from "../token/index.vue";
+import UiToken from "../token/token.vue";
 import UiPopup from "../portal/index.vue";
 import UiMenu from "../menu/index.vue";
 import UiMenuItem from "../menu/item.vue";

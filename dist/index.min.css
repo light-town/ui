@@ -93,14 +93,6 @@
   color: var(--color-ui-menu-item-title-text);
 }
 
-#app[data-theme-mode=light] {
-  --color-ui-card-border-color: var(--color-gray-150);
-}
-.ui-card {
-  padding: 1.25rem;
-  border: 1px solid var(--color-ui-card-border-color);
-  border-radius: 4px;
-}
 .ui-context-menu {
   user-select: none;
   transition: height 267ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, margin-top 267ms cubic-bezier(0.4, 0, 0.2, 1), opacity 267ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -158,65 +150,6 @@
   padding: 20px 24px;
 }
 
-#theme[data-theme-mode=light] {
-  --color-ui-table-cell-text: var(--color-gray-450);
-  --color-ui-table-row-border: var(--color-gray-150);
-  --color-ui-table-header-bg: var(--color-white);
-}
-.ui-table {
-  user-select: none;
-}
-.ui-table__header {
-  top: 0;
-  left: 0;
-  position: sticky;
-  background-color: var(--color-ui-table-header-bg);
-}
-.ui-table__cell {
-  display: inline-flex;
-  width: auto;
-  padding: 0 0.25rem;
-  font-size: 13px;
-  color: var(--color-ui-table-cell-text);
-  border-bottom: 1px solid var(--color-ui-table-row-border);
-}
-.ui-table__cell-header {
-  height: 40px;
-}
-.ui-table__cell-body {
-  height: 48px;
-}
-#theme[data-theme-mode=light] {
-  --color-ui-token-bg: var(--color-gray-100);
-  --color-ui-token-close-btn-fill: var(--color-gray-650);
-  --color-ui-token-focus-bg: var(--color-gray-200);
-}
-.ui-token {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.25rem 0.5rem;
-  cursor: default;
-  user-select: none;
-  background-color: var(--color-ui-token-bg);
-}
-.ui-token:focus {
-  outline: none;
-  background-color: var(--color-ui-token-focus-bg);
-}
-.ui-token__text {
-  font-size: 14px;
-  font-weight: 400;
-  white-space: nowrap;
-}
-.ui-token__close-btn {
-  --size: 8px;
-  width: var(--size);
-  height: var(--size);
-  fill: var(--color-ui-token-close-btn-fill);
-  margin-left: 8px;
-  cursor: pointer;
-}
 #theme[data-theme-mode=light] {
   --color-ui-token-selector-border: var(--color-gray-150);
   --color-ui-token-selector-dropdown-bg: var(--color-white);
@@ -1783,6 +1716,12 @@ button:focus {
   z-index: 999999;
 }
 
+.ui-card {
+  padding: 1.25rem;
+  border: 1px solid var(#d7d7d7);
+  border-radius: 4px;
+}
+
 .ui-grid {
   display: flex;
 }
@@ -1917,6 +1856,28 @@ button:focus {
     opacity: 1;
   }
 }
+.ui-table {
+  user-select: none;
+}
+.ui-table__header {
+  top: 0;
+  left: 0;
+  position: sticky;
+  background-color: #fff;
+}
+.ui-table__cell {
+  padding: 0 0.25rem;
+  font-size: 13px;
+  color: #737373;
+  border-bottom: 1px solid #d7d7d7;
+}
+.ui-table__cell-header {
+  height: 40px;
+}
+.ui-table__cell-body {
+  height: 48px;
+}
+
 .ui-toggle {
   position: relative;
   width: 3rem;
@@ -1970,4 +1931,32 @@ button:focus {
 .ui-toggle > .ui-loading > .ui-loading__spinner {
   border-color: #a4a4a4;
   border-top-color: #fff;
+}
+
+.ui-token {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem 0.5rem;
+  cursor: default;
+  user-select: none;
+  background-color: #e8e8e8;
+  border-radius: 0.25rem;
+}
+.ui-token:focus {
+  outline: none;
+  background-color: #c5c5c5;
+}
+.ui-token__text {
+  font-size: 14px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.ui-token__close-btn {
+  --size: 8px;
+  width: --size;
+  height: --size;
+  fill: #383838;
+  margin-left: 8px;
+  cursor: pointer;
 }

@@ -1,16 +1,24 @@
 <template>
-  <ui-grid component="table" role="table" class="ui-table" direction="column">
+  <ui-grid
+    component="table"
+    role="table"
+    class="ui-table"
+    direction="column"
+    :contained="true"
+  >
     <ui-grid
       v-if="items.length"
       component="thead"
       role="rowgroup"
       class="ui-table__header"
+      :contained="true"
     >
       <ui-grid
         component="tr"
         role="row"
         class="ui-table__row"
         :class="hrClass"
+        :contained="true"
         @click="$emit('header-row-click', $event)"
       >
         <ui-grid
@@ -21,6 +29,7 @@
           align-items="center"
           class="ui-table__cell ui-table__cell-header"
           :class="field.hcClass"
+          :contained="true"
           @click="$emit('header-cell-click', $event, field)"
         >
           <slot :name="`head`">
@@ -35,7 +44,12 @@
         </ui-grid>
       </ui-grid>
     </ui-grid>
-    <ui-grid component="tbody" role="rowgroup" direction="column">
+    <ui-grid
+      component="tbody"
+      role="rowgroup"
+      direction="column"
+      :contained="true"
+    >
       <template v-if="items.length">
         <ui-grid
           v-for="i in items.length"
@@ -44,6 +58,7 @@
           role="row"
           class="ui-table__row"
           :class="[brClass, items[i - 1].brClass]"
+          :contained="true"
           @click.native="$emit('body-row-click', $event, items[i - 1])"
           @dblclick.native="$emit('body-row-dbl-click', $event, items[i - 1])"
           @contextmenu.native="
@@ -61,6 +76,7 @@
             align-items="center"
             class="ui-table__cell ui-table__cell-body"
             :class="field.bcClass"
+            :contained="true"
             @click="$emit('body-cell-click', $event, field, items)"
           >
             <slot :name="`cell`">
@@ -82,10 +98,11 @@
   </ui-grid>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
 
-export default {
+export default Vue.extend({
   name: "UiTable",
   components: {
     UiGrid
@@ -110,7 +127,5 @@ export default {
       default: ""
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

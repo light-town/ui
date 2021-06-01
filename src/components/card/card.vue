@@ -1,26 +1,25 @@
 <template>
   <ui-grid direction="column" class="ui-card">
-    <ui-grid align-items="center" class="ui-card__header">
+    <ui-grid align-items="center" class="ui-card__header" :contained="true">
       <slot name="header"></slot>
     </ui-grid>
-    <ui-grid align-items="center" class="ui-card__body">
+    <ui-grid align-items="center" class="ui-card__body" :contained="true">
       <slot name="body"></slot>
     </ui-grid>
-    <ui-grid align-items="center" class="ui-card__footer">
+    <ui-grid align-items="center" class="ui-card__footer" :contained="true">
       <slot name="footer"></slot>
     </ui-grid>
   </ui-grid>
 </template>
 
 <script>
+import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
 
-export default {
+export default Vue.extend({
   name: "UiCard",
   components: {
     UiGrid
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>

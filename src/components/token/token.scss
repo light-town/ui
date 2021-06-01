@@ -1,0 +1,44 @@
+$ui-token-bg: $gray-100;
+$ui-token-close-btn-fill: $gray-650;
+
+$ui-token-focus-bg: $gray-200;
+
+.ui-token {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.25rem 0.5rem;
+
+  cursor: default;
+  user-select: none;
+
+  background-color: $ui-token-bg;
+
+  border-radius: 0.25rem;
+
+  &:focus {
+    outline: none;
+    background-color: $ui-token-focus-bg;
+  }
+
+  &__text {
+    font-size: 14px;
+    font-weight: 400;
+
+    white-space: nowrap;
+  }
+
+  &__close-btn {
+    --size: 8px;
+
+    width: --size;
+    height: --size;
+
+    fill: $ui-token-close-btn-fill;
+
+    margin-left: 8px;
+
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,35 @@
+$ui-table-cell-text: $gray-450;
+$ui-table-row-border: $gray-150;
+
+$ui-table-header-bg: $white;
+
+.ui-table {
+  user-select: none;
+
+  &__header {
+    top: 0;
+    left: 0;
+
+    position: sticky;
+
+    background-color: $ui-table-header-bg;
+  }
+
+  &__cell {
+    padding: 0 0.25rem;
+
+    font-size: 13px;
+
+    color: $ui-table-cell-text;
+
+    border-bottom: 1px solid $ui-table-row-border;
+
+    &-header {
+      height: 40px;
+    }
+
+    &-body {
+      height: 48px;
+    }
+  }
+}

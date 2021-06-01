@@ -4,31 +4,37 @@
     @click.stop="$emit('click')"
     @keydown="$emit('keydown', $event)"
   >
-    <p class="ui-token__text"><slot></slot></p>
+    <p class="ui-token__text">
+      {{ title }}
+    </p>
     <close-icon
       v-if="!viewOnly"
       class="ui-token__close-btn"
       @click.stop="$emit('close')"
-    ></close-icon>
+    />
   </span>
 </template>
 
-<script>
+<script lang="ts">
+import Vue from "vue";
 import CloseIcon from "../../assets/close.svg";
 
-export default {
+export default Vue.extend({
   name: "UiToken",
   components: {
     CloseIcon
   },
   props: {
+    title: {
+      type: String,
+      required: false,
+      default: ""
+    },
     viewOnly: {
       type: Boolean,
       required: false,
-      default: false
+      default: true
     }
   }
-};
+});
 </script>
-
-<style lang="scss" src="./index.scss"></style>
