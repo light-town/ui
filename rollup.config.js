@@ -9,6 +9,7 @@ import { string } from "rollup-plugin-string";
 import typescript from "@rollup/plugin-typescript";
 import replace from "@rollup/plugin-replace";
 import glob from "glob";
+import copy from "rollup-plugin-copy";
 
 /**
  * Returns true if an import is not considered for inlining into the current file.
@@ -87,6 +88,9 @@ export default glob
         file: `dist/${outputFilename}.js`
       },
       plugins: [
+        copy({
+          targets: [{ src: "src/assets/**/*", dest: "dist/assets" }]
+        }),
         replace({
           preventAssignment: true,
           delimiters: ["/* ", " */"],
