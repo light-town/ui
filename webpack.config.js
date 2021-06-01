@@ -27,7 +27,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue$: "vue/dist/vue.esm.js"
+      vue$: path.resolve("./node_modules/vue")
     },
     extensions: ["*", ".js", ".vue", ".json", ".ts"]
   },
@@ -69,11 +69,16 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader"]
+        use: [MiniCssExtractPlugin.loader, "vue-style-loader", "css-loader"]
       },
       {
         test: /\.scss$/,
-        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
+        use: [
+          MiniCssExtractPlugin.loader,
+          "vue-style-loader",
+          "css-loader",
+          "sass-loader"
+        ]
       },
       {
         test: /\.sass$/,

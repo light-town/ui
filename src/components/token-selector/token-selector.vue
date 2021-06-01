@@ -103,7 +103,7 @@
 
 <script lang="ts">
 import Vue from "vue";
-import * as uuid from "uuid";
+import uuid from "uuid";
 import UiGrid from "../grid/grid.vue";
 import UiToken from "../token/token.vue";
 import UiPopup from "../portal/portal.vue";
