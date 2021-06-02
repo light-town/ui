@@ -45,7 +45,7 @@ var script = Vue.extend({
     contained: {
       type: Boolean,
       required: false,
-      default: false
+      default: true
     }
   }
 });
