@@ -1,0 +1,38 @@
+@import "scale.scss";
+@import "margin.scss";
+
+@each $margin, $value in $spacing {
+  .ui-m-#{$margin} {
+    @include ui-m($value);
+  }
+}
+
+@each $margin, $value in $spacing {
+  .-ui-m-#{$margin} {
+    @include -ui-m($value);
+  }
+}
+
+@each $margin, $value in $spacing {
+  .ui-mx-#{$margin} {
+    @include ui-mx($value);
+  }
+}
+
+@each $margin, $value in $spacing {
+  .-ui-mx-#{$margin} {
+    @include -ui-mx($value);
+  }
+}
+
+@each $margin, $value in $spacing {
+  .ui-my-#{$margin} {
+    @include ui-my($value);
+  }
+}
+
+@each $margin, $value in $spacing {
+  .-ui-my-#{$margin} {
+    @include -ui-my($value);
+  }
+}

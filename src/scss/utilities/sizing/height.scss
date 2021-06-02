@@ -1,13 +1,7 @@
-@import "scale";
+@import "scale.scss";
 
 @mixin ui-h($rem: 0) {
   height: $rem;
-}
-
-@each $height, $value in $spacing {
-  .ui-h-#{$height} {
-    @include ui-h($value);
-  }
 }
 
 @mixin ui-h-auto {
@@ -91,9 +85,5 @@
 }
 
 @mixin ui-h-screen {
-  @include ui-h($spacing-scale-h-screen);
-}
-
-.ui-h-screen {
   @include ui-h($spacing-scale-h-screen);
 }

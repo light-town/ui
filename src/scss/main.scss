@@ -3,12 +3,8 @@
 @import "functions";
 @import "variables";
 
-@import "flex";
-@import "sizing";
-@import "spacing";
-@import "background";
-@import "border";
-@import "overflow";
+@import "utilities.scss"; /// only mixins
+@import "utilities.classes.scss"; /// only classes
 
 @import "mixins";
 

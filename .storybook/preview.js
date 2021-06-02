@@ -1,7 +1,7 @@
 const stylesheetsRequireCtx = require.context(
   "../src/scss",
   true,
-  /(storybook|bootstrap)\.scss$/
+  /(storybook)\.scss$/
 );
 
 stylesheetsRequireCtx("./storybook.scss");

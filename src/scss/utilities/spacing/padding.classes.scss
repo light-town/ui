@@ -1,0 +1,38 @@
+@import "scale.scss";
+@import "padding.scss";
+
+@each $padding, $value in $spacing {
+  .ui-p-#{$padding} {
+    @include ui-p($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-p-#{$padding} {
+    @include -ui-p($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .ui-px-#{$padding} {
+    @include ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-px-#{$padding} {
+    @include -ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .ui-py-#{$padding} {
+    @include ui-py($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-py-#{$padding} {
+    @include -ui-py($value);
+  }
+}

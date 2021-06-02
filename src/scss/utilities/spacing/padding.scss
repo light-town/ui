@@ -1,4 +1,4 @@
-@import "scale";
+@import "scale.scss";
 
 @mixin ui-p($rem: 0) {
   padding: $rem;
@@ -26,42 +26,6 @@
 @mixin -ui-py($rem: 0) {
   padding-top: -$rem;
   padding-bottom: -$rem;
-}
-
-@each $padding, $value in $spacing {
-  .ui-p-#{$padding} {
-    @include ui-p($value);
-  }
-}
-
-@each $padding, $value in $spacing {
-  .-ui-p-#{$padding} {
-    @include -ui-p($value);
-  }
-}
-
-@each $padding, $value in $spacing {
-  .ui-px-#{$padding} {
-    @include ui-px($value);
-  }
-}
-
-@each $padding, $value in $spacing {
-  .-ui-px-#{$padding} {
-    @include -ui-px($value);
-  }
-}
-
-@each $padding, $value in $spacing {
-  .ui-py-#{$padding} {
-    @include ui-py($value);
-  }
-}
-
-@each $padding, $value in $spacing {
-  .-ui-py-#{$padding} {
-    @include -ui-py($value);
-  }
 }
 
 /// PADDING POS

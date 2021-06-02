@@ -1,13 +1,7 @@
-@import "scale";
+@import "scale.scss";
 
 @mixin ui-w($rem: 0) {
   width: $rem;
-}
-
-@each $width, $value in $spacing {
-  .ui-w-#{$width} {
-    @include ui-w($value);
-  }
 }
 
 @mixin ui-w-auto {
@@ -91,9 +85,5 @@
 }
 
 @mixin ui-w-screen {
-  @include ui-w($spacing-scale-w-screen);
-}
-
-.ui-w-screen {
   @include ui-w($spacing-scale-w-screen);
 }

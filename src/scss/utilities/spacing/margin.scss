@@ -1,4 +1,4 @@
-@import "scale";
+@import "scale.scss";
 
 @mixin ui-m($rem: 0) {
   margin: $rem;
@@ -58,42 +58,6 @@
 
 @mixin -ui-mr($rem: 0) {
   margin-right: -$rem;
-}
-
-@each $margin, $value in $spacing {
-  .ui-m-#{$margin} {
-    @include ui-m($value);
-  }
-}
-
-@each $margin, $value in $spacing {
-  .-ui-m-#{$margin} {
-    @include -ui-m($value);
-  }
-}
-
-@each $margin, $value in $spacing {
-  .ui-mx-#{$margin} {
-    @include ui-mx($value);
-  }
-}
-
-@each $margin, $value in $spacing {
-  .-ui-mx-#{$margin} {
-    @include -ui-mx($value);
-  }
-}
-
-@each $margin, $value in $spacing {
-  .ui-my-#{$margin} {
-    @include ui-my($value);
-  }
-}
-
-@each $margin, $value in $spacing {
-  .-ui-my-#{$margin} {
-    @include -ui-my($value);
-  }
 }
 
 /// MARGIN POS
