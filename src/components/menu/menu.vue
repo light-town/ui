@@ -5,6 +5,7 @@
     class="ui-menu"
     :tabindex="focusable ? 0 : -1"
     @keydown.native="hadnleKeyDown"
+    :contained="false"
   >
     <slot></slot>
   </ui-grid>

@@ -92,7 +92,8 @@ var __vue_render__ = function __vue_render__() {
       staticClass: "ui-breadcrumbs__item",
       attrs: {
         component: "li",
-        "align-items": "center"
+        "align-items": "center",
+        contained: false
       }
     }, [!item.isDropdown ? [_vm._t("item-tempalte", [_vm._t("item-tempalte(" + item[_vm.uniqueKey] + ")", [_c("ui-button", {
       staticClass: "ui-breadcrumbs__item__btn",

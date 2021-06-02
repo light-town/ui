@@ -4,6 +4,7 @@
     :class="`ui-avatar-s${size}`"
     align-items="center"
     justify="center"
+    :contained="false"
   >
     <img v-if="src" class="ui-avatar__img" :src="src" :alt="alt" />
     <div v-else class="ui-avatar__badge">

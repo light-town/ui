@@ -24,9 +24,13 @@ $ui-token-selector-dropdown-token-focus-bg: $gray-200;
 
   cursor: text;
 
+  @include ui-overflow-x-auto;
+  @include ui-overflow-y-hidden;
+
   &_focus {
+    @include ui-box-shadow;
+
     border: 1px solid $ui-token-selector-focus-border;
-    box-shadow: 0 0 0 0.25rem $ui-token-selector-focus-bg;
   }
 
   &__input {

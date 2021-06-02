@@ -6,6 +6,7 @@
       component="li"
       class="ui-breadcrumbs__item"
       align-items="center"
+      :contained="false"
     >
       <template v-if="!item.isDropdown">
         <slot

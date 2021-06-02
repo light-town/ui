@@ -53,7 +53,8 @@ var __vue_render__ = function __vue_render__() {
     class: "ui-avatar-s" + _vm.size,
     attrs: {
       "align-items": "center",
-      justify: "center"
+      justify: "center",
+      contained: false
     }
   }, [_vm.src ? _c("img", {
     staticClass: "ui-avatar__img",

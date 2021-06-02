@@ -4,7 +4,7 @@ import { AbstractTemplate, Story } from "../../tools/story";
 
 const template = `
   <ui-theme-provider>
-    <ui-token-selector class="ui-w-full ui-overflow-x-auto" v-bind="$props" v-on="$props">
+    <ui-token-selector v-bind="$props" v-on="$props">
     </ui-token-selector>
   </ui-theme-provider>
 `;

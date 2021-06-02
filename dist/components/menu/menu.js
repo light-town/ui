@@ -317,7 +317,8 @@ var __vue_render__ = function __vue_render__() {
     attrs: {
       component: "ul",
       direction: "column",
-      tabindex: _vm.focusable ? 0 : -1
+      tabindex: _vm.focusable ? 0 : -1,
+      contained: false
     },
     nativeOn: {
       keydown: function keydown($event) {
