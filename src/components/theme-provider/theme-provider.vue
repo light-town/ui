@@ -1,6 +1,11 @@
 <template>
   <ui-grid :class="`ui-theme_${mode}`" :contained="true">
-    <ui-grid :id="APP_CONTENT_LAYOUT_ID" :contained="true">
+    <ui-grid
+      :id="APP_CONTENT_LAYOUT_ID"
+      class="ui-h-full"
+      :class="contentClass"
+      :contained="true"
+    >
       <slot></slot>
     </ui-grid>
     <portal-target name="modals-location" multiple> </portal-target>
@@ -28,6 +33,11 @@ export default Vue.extend({
       validator(val: string): boolean {
         return ["light", "dark"].includes(val);
       }
+    },
+    contentClass: {
+      type: String,
+      required: false,
+      default: ""
     }
   },
   data() {

@@ -71,6 +71,11 @@ var script = Vue.extend({
       validator: function validator(val) {
         return ["light", "dark"].includes(val);
       }
+    },
+    contentClass: {
+      type: String,
+      required: false,
+      default: ""
     }
   },
   data: function data() {
@@ -95,6 +100,8 @@ var __vue_render__ = function __vue_render__() {
       contained: true
     }
   }, [_c("ui-grid", {
+    staticClass: "ui-h-full",
+    class: _vm.contentClass,
     attrs: {
       id: _vm.APP_CONTENT_LAYOUT_ID,
       contained: true
