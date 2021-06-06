@@ -11,8 +11,8 @@
     "prebuild": "rimraf dist",
     "storybook": "start-storybook -p 6006 -s ./src/assets"
   },
-  "main": "./dist/index.js",
-  "module": "dist/index.js",
+  "main": "./dist/bundle.common.js",
+  "module": "dist/bundle.common.js",
   "dependencies": {
     "autoprefixer": "^9.8.6",
     "core-js": "^3.13.1",
