@@ -18,8 +18,7 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiGrid from "../grid/grid.vue";
 import UiPortal from "../portal/portal.vue";
 import UiButton from "../button/button.vue";
@@ -27,7 +26,7 @@ import UiMenu from "../menu/menu.vue";
 import UiMenuLoading from "../menu/loading.vue";
 import * as config from "../../config";
 
-export default Vue.extend({
+export default {
   name: "UiDropdown",
   components: {
     UiGrid,
@@ -52,7 +51,7 @@ export default Vue.extend({
     return { root: null };
   },
   methods: {
-    open(e: any) {
+    open(e) {
       if (this.root) {
         this.close(e);
         this.$nextTick(() => {
@@ -82,15 +81,15 @@ export default Vue.extend({
 
       window.addEventListener("blur", this.close, { once: true });
     },
-    close(e: any) {
+    close(e) {
       if (!this.$refs.menu || !this.root) return;
 
-      (this.$refs.menu as any).close();
+      this.$refs.menu.close();
       this.$nextTick(() => {
         this.root = null;
         this.$emit("close", e);
       });
     }
   }
-});
+};
 </script>

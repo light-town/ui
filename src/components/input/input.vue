@@ -8,17 +8,15 @@
   />
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+<script>
+export default {
   name: "UiInput",
   props: {
     type: {
       type: String,
       required: false,
       default: "text",
-      validator(val: string): boolean {
+      validator(val) {
         return ["text", "password", "email", "url", "tel"].includes(val);
       }
     },
@@ -34,9 +32,9 @@ export default Vue.extend({
     }
   },
   methods: {
-    handleInput(e: InputEvent): void {
-      this.$emit("input", (e.target as HTMLInputElement)?.value);
+    handleInput(e) {
+      this.$emit("input", e.target?.value);
     }
   }
-});
+};
 </script>

@@ -71,8 +71,7 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiGrid from "../grid/grid.vue";
 import UiButton from "../button/button.vue";
 import UiDropdown from "../dropdown/dropdown.vue";
@@ -80,7 +79,7 @@ import UiMenuItem from "../menu/item.vue";
 import ArrowIcon from "../../assets/right-arrow.svg";
 import MoreIcon from "../../assets/more.svg";
 
-export default Vue.extend({
+export default {
   name: "UiBreadcrumbs",
   components: {
     UiGrid,
@@ -108,7 +107,7 @@ export default Vue.extend({
     }
   },
   computed: {
-    visibleItems(): any[] {
+    visibleItems() {
       if (this.short) {
         return [
           this.items[0],
@@ -120,22 +119,22 @@ export default Vue.extend({
 
       return this.items;
     },
-    hiddenItems(): any[] {
+    hiddenItems() {
       if (this.short) {
         return this.items.slice(1, this.items.length - 2);
       }
 
       return [];
     },
-    short(): boolean {
+    short() {
       return this.items.length > 4;
     },
-    lastItem(): any {
+    lastItem() {
       return this.items.length ? this.items[this.items.length - 1] : null;
     }
   },
   methods: {
-    handleItemClick(e: MouseEvent, item: any, click: any): void {
+    handleItemClick(e, item, click) {
       if (item.isDropdown) return;
 
       click(e);
@@ -143,5 +142,5 @@ export default Vue.extend({
       this.$emit("item-click", item, e);
     }
   }
-});
+};
 </script>

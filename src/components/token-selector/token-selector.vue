@@ -101,8 +101,7 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import uuid from "uuid";
 import UiGrid from "../grid/grid.vue";
 import UiToken from "../token/token.vue";
@@ -112,7 +111,7 @@ import UiMenuItem from "../menu/item.vue";
 import UiMenuLoading from "../menu/loading.vue";
 import * as config from "../../config";
 
-export default Vue.extend<any, any, any, any>({
+export default {
   name: "UiTokenSelector",
   components: {
     UiGrid,
@@ -165,8 +164,8 @@ export default Vue.extend<any, any, any, any>({
     remainingDropdownItems() {
       const re = new RegExp(`^${this.inputText.toLowerCase()}`);
       return this.dropdownItems.filter(
-        (i: any) =>
-          !this.tokens.find((t: any) => t.id === i.id) &&
+        i =>
+          !this.tokens.find(t => t.id === i.id) &&
           (!this.inputText.length || re.test(i.name.trim().toLowerCase()))
       );
     }
@@ -186,14 +185,14 @@ export default Vue.extend<any, any, any, any>({
     this.isFocus = document.activeElement === this.$refs?.input;
   },
   methods: {
-    addToken(token: any) {
+    addToken(token) {
       this.tokens.push(token);
 
       this.$emit("input", this.tokens);
       this.$emit("token-added", token);
     },
-    removeToken(token: any) {
-      this.tokens = this.tokens.filter((t: any) => t !== token);
+    removeToken(token) {
+      this.tokens = this.tokens.filter(t => t !== token);
 
       this.$emit("input", this.tokens);
       this.$emit("token-removed", token);
@@ -219,7 +218,7 @@ export default Vue.extend<any, any, any, any>({
 
       window.addEventListener("blur", this.close, { once: true });
     },
-    closeDropdown(e: any) {
+    closeDropdown(e) {
       if (!this.$refs.menu) return;
 
       this.$refs.menu.close();
@@ -231,7 +230,7 @@ export default Vue.extend<any, any, any, any>({
     clearTextInput() {
       this.inputText = "";
     },
-    handleDropdownItemClick(dropdownItem: any) {
+    handleDropdownItemClick(dropdownItem) {
       this.closeDropdown();
 
       this.clearTextInput();
@@ -240,7 +239,7 @@ export default Vue.extend<any, any, any, any>({
     },
     handleEnterKeyPress() {
       const existsToken = this.dropdownItems.find(
-        (i: any) => i.name === this.inputText
+        i => i.name === this.inputText
       );
 
       if (existsToken) {
@@ -253,7 +252,7 @@ export default Vue.extend<any, any, any, any>({
 
       this.clearTextInput();
     },
-    handleCloseBtnClick(token: any) {
+    handleCloseBtnClick(token) {
       this.removeToken(token);
 
       this.closeDropdown();
@@ -263,7 +262,7 @@ export default Vue.extend<any, any, any, any>({
 
       this.openDropdown();
     },
-    handleGlobalKeyDown(e: any) {
+    handleGlobalKeyDown(e) {
       if (!this.root || !["ArrowUp", "ArrowDown", "Enter"].includes(e.code))
         return;
 
@@ -307,7 +306,7 @@ export default Vue.extend<any, any, any, any>({
         const currentItemId = this.$refs.menu.getActiveItem()?.id;
 
         const currentItem = this.remainingDropdownItems.find(
-          (i: any) => i.id === currentItemId
+          i => i.id === currentItemId
         );
 
         if (!currentItem) {
@@ -323,7 +322,7 @@ export default Vue.extend<any, any, any, any>({
         });
       }
     },
-    handleInputKeyDown(e: any) {
+    handleInputKeyDown(e) {
       if (
         e.code !== "Backspace" ||
         this.inputText.length ||
@@ -346,5 +345,5 @@ export default Vue.extend<any, any, any, any>({
       this.clearTextInput();
     }
   }
-});
+};
 </script>

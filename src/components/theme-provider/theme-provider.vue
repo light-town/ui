@@ -12,7 +12,7 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
+<script>
 import Vue from "vue";
 import PortalVue from "portal-vue";
 import UiGrid from "../grid/grid.vue";
@@ -20,7 +20,7 @@ import * as config from "../../config";
 
 Vue.use(PortalVue);
 
-export default Vue.extend({
+export default {
   name: "ThemeProvider",
   components: {
     UiGrid
@@ -30,7 +30,7 @@ export default Vue.extend({
       type: String,
       required: false,
       default: "light",
-      validator(val: string): boolean {
+      validator(val) {
         return ["light", "dark"].includes(val);
       }
     },
@@ -45,5 +45,5 @@ export default Vue.extend({
       ...config
     };
   }
-});
+};
 </script>

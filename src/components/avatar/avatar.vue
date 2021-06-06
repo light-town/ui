@@ -13,11 +13,10 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiGrid from "../grid/grid.vue";
 
-export default Vue.extend({
+export default {
   name: "UiAvatar",
   components: {
     UiGrid
@@ -40,15 +39,15 @@ export default Vue.extend({
       type: Number,
       required: false,
       default: 64,
-      validator(val: number): boolean {
+      validator(val) {
         return [16, 24, 32, 44, 48, 56, 64, 96, 128].includes(val);
       }
     }
   },
   computed: {
-    firstNameSymbol(): string {
+    firstNameSymbol() {
       return this.name.length ? this.name[0].toUpperCase() : "";
     }
   }
-});
+};
 </script>

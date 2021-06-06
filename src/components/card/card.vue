@@ -13,13 +13,12 @@
 </template>
 
 <script>
-import Vue from "vue";
 import UiGrid from "../grid/grid.vue";
 
-export default Vue.extend({
+export default {
   name: "UiCard",
   components: {
     UiGrid
   }
-});
+};
 </script>

@@ -9,14 +9,13 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiGrid from "../grid/grid.vue";
 import UiPortal from "../portal/portal.vue";
 import UiMenu from "../menu/menu.vue";
 import * as config from "../../config";
 
-export default Vue.extend<any, any, any, any>({
+export default {
   name: "UiContextMenu",
   components: {
     UiGrid,
@@ -48,7 +47,7 @@ export default Vue.extend<any, any, any, any>({
     if (this.anchorRef) this.anchorRef.$off("contextmenu", this.open);
   },
   methods: {
-    open(e: any) {
+    open(e) {
       if (this.root) {
         this.close();
         this.$nextTick(() => {
@@ -80,7 +79,7 @@ export default Vue.extend<any, any, any, any>({
 
       window.addEventListener("blur", this.close, { once: true });
     },
-    close(e: any) {
+    close(e) {
       if (!this.$refs.menu) return;
 
       this.$refs.menu.close();
@@ -91,12 +90,12 @@ export default Vue.extend<any, any, any, any>({
         this.$emit("close", e);
       });
     },
-    handleItemClick(e: any) {
+    handleItemClick(e) {
       this.$nextTick(() => {
         this.$emit("menu-item-click", e);
         this.close(e);
       });
     }
   }
-});
+};
 </script>

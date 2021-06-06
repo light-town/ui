@@ -17,11 +17,10 @@
   </span>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import CloseIcon from "../../assets/close.svg";
 
-export default Vue.extend({
+export default {
   name: "UiToken",
   components: {
     CloseIcon
@@ -38,5 +37,5 @@ export default Vue.extend({
       default: true
     }
   }
-});
+};
 </script>

@@ -6,10 +6,8 @@
   </span>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+<script>
+export default {
   name: "UiSkeleton",
   props: {
     width: {
@@ -26,5 +24,5 @@ export default Vue.extend({
       default: "0.25rem"
     }
   }
-});
+};
 </script>

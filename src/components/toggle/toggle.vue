@@ -15,14 +15,13 @@
   </ui-button>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiButton from "../button/button.vue";
 import UiLoading from "../loading/loading.vue";
 import CheckIcon from "../../assets/check-2.svg";
 import CrossIcon from "../../assets/cross.svg";
 
-export default Vue.extend({
+export default {
   name: "UiToggle",
   components: {
     UiButton,
@@ -53,15 +52,15 @@ export default Vue.extend({
     };
   },
   watch: {
-    value(): void {
+    value() {
       this.state = this.value;
     }
   },
-  created(): void {
+  created() {
     this.state = this.value;
   },
   methods: {
-    toggle(): void {
+    toggle() {
       if (this.loading || this.disabled) return;
 
       this.state = !this.state;
@@ -69,5 +68,5 @@ export default Vue.extend({
       this.$emit("input", this.state);
     }
   }
-});
+};
 </script>

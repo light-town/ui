@@ -20,15 +20,14 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiGrid from "../grid/grid.vue";
 import ErrorIcon from "../../assets/cancel.svg";
 import WarningIcon from "../../assets/warning.svg";
 import CheckIcon from "../../assets/check.svg";
 import InfoIcon from "../../assets/info.svg";
 
-export default Vue.extend({
+export default {
   name: "UiAlert",
   components: {
     UiGrid,
@@ -46,10 +45,10 @@ export default Vue.extend({
       type: String,
       required: false,
       default: "info",
-      validator(val: string): boolean {
+      validator(val) {
         return ["info", "warning", "success", "error"].includes(val);
       }
     }
   }
-});
+};
 </script>

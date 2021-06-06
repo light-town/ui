@@ -6,14 +6,8 @@ module.exports = {
         use: ["babel-loader", "vue-svg-loader"]
       },
       {
-        test: /\.ts$/,
-        use: [
-          "babel-loader",
-          {
-            loader: "ts-loader",
-            options: { appendTsSuffixTo: [/\.vue$/] }
-          }
-        ]
+        test: /\.js$/,
+        use: ["babel-loader"]
       },
       {
         test: /\.vue$/,
@@ -25,8 +19,7 @@ module.exports = {
               "vue-style-loader",
               "css-loader",
               "sass-loader?indentedSyntax"
-            ],
-            ts: "babel-loader!ts-loader"
+            ]
           }
         }
       },

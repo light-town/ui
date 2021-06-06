@@ -4,17 +4,15 @@
   </span>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+<script>
+export default {
   name: "UiBadge",
   props: {
     variant: {
       type: String,
       required: false,
       default: "contained",
-      validator(val: string): boolean {
+      validator(val) {
         return ["contained", "outlined"].includes(val);
       }
     },
@@ -22,7 +20,7 @@ export default Vue.extend({
       type: String,
       required: false,
       default: "green",
-      validator(val: string): boolean {
+      validator(val) {
         return ["black", "blue", "green"].includes(val);
       }
     },
@@ -32,5 +30,5 @@ export default Vue.extend({
       default: ""
     }
   }
-});
+};
 </script>

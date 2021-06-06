@@ -38,8 +38,7 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiGrid from "../grid/grid.vue";
 import UiPortal from "../portal/portal.vue";
 import UiMenu from "../menu/menu.vue";
@@ -47,7 +46,7 @@ import UiMenuItem from "../menu/item.vue";
 import UiMenuLoading from "../menu/loading.vue";
 import * as config from "../../config";
 
-export default Vue.extend({
+export default {
   name: "UiSelect",
   components: {
     UiGrid,
@@ -89,13 +88,13 @@ export default Vue.extend({
     window.removeEventListener("blur", this.close);
   },
   methods: {
-    handleItemClick(item: any) {
+    handleItemClick(item) {
       this.selected = item;
 
       this.$emit("input", this.selected);
       this.close(null);
     },
-    open(e: any) {
+    open(e) {
       if (this.root) {
         this.close(e);
         this.$nextTick(() => {
@@ -127,19 +126,19 @@ export default Vue.extend({
 
       this.$nextTick(() => {
         this.$nextTick(() => {
-          (this.$refs.menu as any).setActiveItem((this.selected as any)?.name);
+          this.$refs.menu.setActiveItem(this.selected?.name);
         });
       });
     },
-    close(e: any) {
+    close(e) {
       if (!this.$refs.menu || !this.root) return;
 
-      (this.$refs.menu as any).close(e);
+      this.$refs.menu.close(e);
       this.$nextTick(() => {
         this.root = null;
         this.$emit("close", e);
       });
     }
   }
-});
+};
 </script>

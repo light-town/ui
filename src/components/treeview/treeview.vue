@@ -19,12 +19,11 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import NestedNode from "./nested-node.vue";
 import UiGrid from "../grid/grid.vue";
 
-export default Vue.extend<any, any, any, any>({
+export default {
   name: "UiTreeView",
   components: {
     UiGrid,
@@ -57,17 +56,17 @@ export default Vue.extend<any, any, any, any>({
   },
   computed: {
     upperNodes() {
-      return this.nodes.filter((n: any) => !n[this.nestedNodeKey]);
+      return this.nodes.filter(n => !n[this.nestedNodeKey]);
     }
   },
   methods: {
-    nestedNodes(node: any): any {
+    nestedNodes(node) {
       return this.nodes.filter(
-        (n: any) =>
+        n =>
           n[this.uniqueNodeKey] !== node[this.uniqueNodeKey] &&
           n[this.nestedNodeKey] === node[this.uniqueNodeKey]
       );
     }
   }
-});
+};
 </script>

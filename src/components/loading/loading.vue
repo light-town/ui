@@ -7,10 +7,8 @@
   </span>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-
-export default Vue.extend({
+<script>
+export default {
   name: "UiLoading",
   props: {
     size: {
@@ -19,5 +17,5 @@ export default Vue.extend({
       default: 16
     }
   }
-});
+};
 </script>

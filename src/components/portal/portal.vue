@@ -12,11 +12,10 @@
   </portal>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import PortalContent from "./content.vue";
 
-export default Vue.extend({
+export default {
   name: "UiPortal",
   components: {
     PortalContent
@@ -56,5 +55,5 @@ export default Vue.extend({
       default: null
     }
   }
-});
+};
 </script>

@@ -17,9 +17,7 @@
 </template>
 
 <script>
-import Vue from "vue";
-
-export default Vue.extend({
+export default {
   name: "UiGrid",
   props: {
     justify: {
@@ -83,5 +81,5 @@ export default Vue.extend({
       default: true
     }
   }
-});
+};
 </script>

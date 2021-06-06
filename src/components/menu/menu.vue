@@ -11,25 +11,11 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import uuid from "uuid";
 import UiGrid from "../grid/grid.vue";
 
-interface Data {
-  context: {
-    root: any;
-    items: any[];
-    activeItemId: string | null;
-    isAvailableShowing: boolean;
-  };
-}
-interface Props {
-  rootMenuRef: object;
-  focusable: boolean;
-}
-
-export default Vue.extend<Data, any, any, Props>({
+export default {
   name: "UiMenu",
   components: {
     UiGrid
@@ -63,8 +49,8 @@ export default Vue.extend<Data, any, any, Props>({
   },
   mounted() {
     this.context.items = (this.$slots.default || [])
-      .filter((i: any) => i.componentInstance)
-      .map(({ componentInstance: vm }: any) => {
+      .filter(i => i.componentInstance)
+      .map(({ componentInstance: vm }) => {
         if (!vm) return {};
 
         const id = vm.id ?? uuid.v4();
@@ -101,8 +87,8 @@ export default Vue.extend<Data, any, any, Props>({
   },
   updated() {
     this.context.items = (this.$slots.default || [])
-      .filter((i: any) => i.componentInstance)
-      .map(({ componentInstance: vm }: any) => {
+      .filter(i => i.componentInstance)
+      .map(({ componentInstance: vm }) => {
         const id = vm.id ?? uuid.v4();
         const mouseEnterHandler = this.handleItemEnter.bind(this, vm);
         const mouseLeaveHandler = this.handleItemLeave.bind(this, vm);
@@ -136,7 +122,7 @@ export default Vue.extend<Data, any, any, Props>({
     });
   },
   methods: {
-    handleItemEnter(vm: any) {
+    handleItemEnter(vm) {
       if (this.context.activeItemId === vm.id) return;
 
       this.closeSubmenus();
@@ -147,7 +133,7 @@ export default Vue.extend<Data, any, any, Props>({
       this.$nextTick(() => {
         this.$nextTick(() => {
           const currentItem = this.context.items.find(
-            (i: any) => i.id === this.context.activeItemId
+            i => i.id === this.context.activeItemId
           );
 
           if (currentItem?.vm.$refs.submenu)
@@ -156,7 +142,7 @@ export default Vue.extend<Data, any, any, Props>({
         });
       });
     },
-    handleItemLeave(vm: any): any {
+    handleItemLeave(vm) {
       if (vm.existsSubmenu) {
         return;
       }
@@ -165,19 +151,19 @@ export default Vue.extend<Data, any, any, Props>({
     },
     handleItemClick() {
       const vm = this.context.items.find(
-        (i: any) => i.id === this.context.activeItemId
+        i => i.id === this.context.activeItemId
       )?.vm;
 
       this.$emit("menu-item-click", vm);
     },
-    handleMenuItemClick(e: any) {
+    handleMenuItemClick(e) {
       this.$emit("menu-item-click", e);
     },
-    hadnleKeyDown(e: any) {
+    hadnleKeyDown(e) {
       this.context.isAvailableShowing = false;
 
       let currentIndex = this.context.items.findIndex(
-        (i: any) => i.id === this.context.activeItemId
+        i => i.id === this.context.activeItemId
       );
 
       switch (e.code) {
@@ -238,7 +224,7 @@ export default Vue.extend<Data, any, any, Props>({
       }
     },
     close() {
-      this.context.items.forEach((i: any) => {
+      this.context.items.forEach(i => {
         i.vm.$off("mouseenter", i.mouseEnterHandler);
         i.vm.$off("mouseleave", i.mouseLeaveHandler);
         i.vm.$off(
@@ -255,27 +241,25 @@ export default Vue.extend<Data, any, any, Props>({
       });
     },
     closeSubmenus() {
-      this.context.items.forEach((i: any) => {
+      this.context.items.forEach(i => {
         if (i.vm.$refs.submenu) {
           i.vm.$refs.submenu.close();
           i.vm.$refs.submenu.$destroy();
         }
       });
     },
-    setActiveItem(id: any) {
+    setActiveItem(id) {
       this.context.activeItemId = id;
     },
-    getItem(id: any) {
-      return this.context.items.find((i: any) => i.id === id);
+    getItem(id) {
+      return this.context.items.find(i => i.id === id);
     },
     getActiveItem() {
-      return this.context.items.find(
-        (i: any) => i.id === this.context.activeItemId
-      );
+      return this.context.items.find(i => i.id === this.context.activeItemId);
     },
-    hasNextItem(id: any) {
+    hasNextItem(id) {
       const activableItems = this.context.items.filter(
-        (i: any) => i.vm.$options.activable
+        i => i.vm.$options.activable
       );
 
       for (let i = 0; i < activableItems.length; ++i) {
@@ -286,9 +270,9 @@ export default Vue.extend<Data, any, any, Props>({
 
       return false;
     },
-    getNextItem(id: any) {
+    getNextItem(id) {
       const activableItems = this.context.items.filter(
-        (i: any) => i.vm.$options.activable
+        i => i.vm.$options.activable
       );
 
       for (let i = 0; i < activableItems.length; ++i) {
@@ -297,9 +281,9 @@ export default Vue.extend<Data, any, any, Props>({
         }
       }
     },
-    hasPreviousItem(id: any) {
+    hasPreviousItem(id) {
       const activableItems = this.context.items.filter(
-        (i: any) => i.vm.$options.activable
+        i => i.vm.$options.activable
       );
 
       for (let i = 0; i < activableItems.length; ++i) {
@@ -310,9 +294,9 @@ export default Vue.extend<Data, any, any, Props>({
 
       return false;
     },
-    getPreviousItem(id: any): any {
+    getPreviousItem(id) {
       const activableItems = this.context.items.filter(
-        (i: any) => i.vm.$options.activable
+        i => i.vm.$options.activable
       );
 
       for (let i = 0; i < activableItems.length; ++i) {
@@ -322,5 +306,5 @@ export default Vue.extend<Data, any, any, Props>({
       }
     }
   }
-});
+};
 </script>

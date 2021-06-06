@@ -13,11 +13,10 @@
   </component>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiLoading from "../loading/loading.vue";
 
-export default Vue.extend({
+export default {
   name: "UiButton",
   components: { UiLoading },
   props: {
@@ -30,7 +29,7 @@ export default Vue.extend({
       type: String,
       required: false,
       default: "button",
-      validator(val: string): boolean {
+      validator(val) {
         return ["button", "submit", "reset"].includes(val);
       }
     },
@@ -38,7 +37,7 @@ export default Vue.extend({
       type: String,
       required: false,
       default: "button",
-      validator(val: string): boolean {
+      validator(val) {
         return ["button", "li", "input", "a"].includes(val);
       }
     },
@@ -46,7 +45,7 @@ export default Vue.extend({
       type: String,
       required: false,
       default: "contained",
-      validator(val: string): boolean {
+      validator(val) {
         return ["contained", "outlined", "text"].includes(val);
       }
     },
@@ -56,5 +55,5 @@ export default Vue.extend({
       default: false
     }
   }
-});
+};
 </script>

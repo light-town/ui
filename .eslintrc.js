@@ -4,20 +4,8 @@ module.exports = {
     browser: true,
     node: true
   },
-  extends: [
-    "plugin:vue/essential",
-    "@vue/typescript",
-    "@vue/prettier",
-    "@vue/prettier/@typescript-eslint"
-  ],
+  extends: ["plugin:vue/essential", "@vue/prettier"],
   rules: {
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/interface-name-prefix": "off",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/explicit-module-boundary-types": "off",
-    "@typescript-eslint/no-explicit-any": "off",
-    "@typescript-eslint/no-empty-function": "off",
-    "@typescript-eslint/no-empty-interface": "off",
     "vue/experimental-script-setup-vars": "off"
   }
 };

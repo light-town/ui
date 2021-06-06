@@ -98,11 +98,10 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiGrid from "../grid/grid.vue";
 
-export default Vue.extend({
+export default {
   name: "UiTable",
   components: {
     UiGrid
@@ -127,5 +126,5 @@ export default Vue.extend({
       default: ""
     }
   }
-});
+};
 </script>

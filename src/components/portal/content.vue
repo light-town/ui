@@ -9,33 +9,10 @@
   </ui-grid>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
+<script>
 import UiGrid from "../grid/grid.vue";
 
-interface Data {
-  localX: string;
-  localY: string;
-  show: boolean;
-}
-
-interface Methods {
-  updatePos: () => void;
-}
-
-interface Computed {
-  root: any;
-}
-
-interface Props {
-  anchor: any;
-  position: string;
-  contentClass: string;
-  x: number;
-  y: number;
-}
-
-export default Vue.extend<Data, Methods, Computed, Props>({
+export default {
   name: "UiPopup",
   components: {
     UiGrid
@@ -157,5 +134,5 @@ export default Vue.extend<Data, Methods, Computed, Props>({
       this.show = true;
     }
   }
-});
+};
 </script>
