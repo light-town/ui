@@ -1,4 +1,12 @@
+const path = require("path");
+
 module.exports = {
+  resolve: {
+    alias: {
+      "~": path.resolve(__dirname, "src")
+    },
+    extensions: ["js", "jsx", "ts", "tsx"]
+  },
   module: {
     rules: [
       {
@@ -25,7 +33,21 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader"]
+        use: [
+          "vue-style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              additionalData: `
+                @import "src/scss/functions.scss";
+                @import "src/scss/variables.scss";
+                @import "src/scss/utilities.scss";
+                @import "src/scss/mixins.scss";
+              `
+            }
+          }
+        ]
       },
       {
         test: /\.sass$/,

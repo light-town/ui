@@ -83,3 +83,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./grid.scss"></style>

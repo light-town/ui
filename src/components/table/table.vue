@@ -128,3 +128,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./table.scss"></style>

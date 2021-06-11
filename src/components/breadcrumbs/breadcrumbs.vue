@@ -144,3 +144,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./breadcrumbs.scss"></style>

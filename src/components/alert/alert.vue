@@ -52,3 +52,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./alert.scss"></style>

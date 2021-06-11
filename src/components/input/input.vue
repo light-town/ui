@@ -38,3 +38,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./input.scss"></style>

@@ -32,3 +32,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./badge.scss"></style>

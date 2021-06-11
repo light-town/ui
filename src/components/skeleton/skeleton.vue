@@ -26,3 +26,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./skeleton.scss"></style>

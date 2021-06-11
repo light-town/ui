@@ -347,3 +347,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./token-selector.scss"></style>

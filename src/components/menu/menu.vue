@@ -308,3 +308,5 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" src="./menu.scss"></style>
