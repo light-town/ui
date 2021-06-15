@@ -30,10 +30,7 @@ $ui-token-focus-bg: $gray-200;
   }
 
   &__close-btn {
-    --size: 8px;
-
-    width: --size;
-    height: --size;
+    @include ui-size(0.5rem);
 
     fill: $ui-token-close-btn-fill;
 

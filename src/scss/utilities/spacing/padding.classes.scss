@@ -36,3 +36,51 @@
     @include -ui-py($value);
   }
 }
+
+@each $padding, $value in $spacing {
+  .ui-pt-#{$padding} {
+    @include ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-pt-#{$padding} {
+    @include -ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .ui-pb-#{$padding} {
+    @include ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-pb-#{$padding} {
+    @include -ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .ui-pl-#{$padding} {
+    @include ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-pl-#{$padding} {
+    @include -ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .ui-pr-#{$padding} {
+    @include ui-px($value);
+  }
+}
+
+@each $padding, $value in $spacing {
+  .-ui-pr-#{$padding} {
+    @include -ui-px($value);
+  }
+}

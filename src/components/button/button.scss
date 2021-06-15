@@ -60,12 +60,8 @@ $ui-button-loading-bg: $green-400;
   transition: background 0.3s ease-out, color 0.3s ease-out, fill 0.3s ease-out,
     border 0.3s ease-out, box-shadow 0.3s;
 
-  & > * {
+  &__loading {
     margin-right: 1.25rem;
-
-    &:last-child {
-      margin-right: 0;
-    }
   }
 
   &:disabled {

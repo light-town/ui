@@ -6,8 +6,8 @@
     :disabled="loading"
     @click="$emit('click', $event)"
   >
-    <ui-loading v-if="loading" :size="14"></ui-loading>
-    <slot v-else>
+    <ui-loading v-if="loading" :size="14" class="ui-btn__loading"></ui-loading>
+    <slot>
       {{ title }}
     </slot>
   </component>
