@@ -15,15 +15,15 @@ $ui-alert-error-text: $red-100;
 $ui-alert-error-icon-fill: $red-100;
 
 .ui-alert {
-  @include ui-px-6;
-  @include ui-py-3;
+  @include ui-px-10;
+  @include ui-py-4;
 
   border: 0;
   border-radius: 0.25rem;
 
   &__icon {
     @include ui-size(1.5rem);
-    @include ui-mr-6;
+    @include ui-mr-10;
     @include ui-flex-fixed;
   }
 
