@@ -13,3 +13,7 @@
 @mixin ui-rounded-3 {
   border-radius: 0.5rem;
 }
+
+@mixin ui-rounded {
+  border-radius: 50%;
+}

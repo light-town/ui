@@ -66,10 +66,7 @@ $ui-menu-item-title-text: $gray-300;
     }
 
     &__submenu-expand-icon {
-      --size: 10px;
-
-      width: --size;
-      height: --size;
+      @include ui-size(px_to_rem(10px));
     }
   }
 

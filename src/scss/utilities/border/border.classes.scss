@@ -15,3 +15,7 @@
 .ui-rounded-3 {
   @include ui-rounded-3;
 }
+
+.ui-rounded {
+  @include ui-rounded;
+}
